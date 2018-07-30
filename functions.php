@@ -4,7 +4,8 @@
  * iPress - WordPress Theme Framework                       
  * ==========================================================
  *
- * Theme functions file for iPress Child Theme
+ * Theme functions file - bootstraps the child theme functionality
+ * 
  * - Rename iPress to Child Theme Name
  * 
  * @package     iPress\Functions
@@ -12,4 +13,25 @@
  * @license     GPL-2.0+
  */
 
-// End
+// Access restriction
+if ( ! defined( 'ABSPATH' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit;
+}
+
+//----------------------------------------------
+//	Theme Bootstrapping 
+//----------------------------------------------
+
+require_once 'inc/bootstrap.php'; 
+
+//----------------------------------------------
+//	Theme Support
+//	- Add SetUp Overrides Here
+//----------------------------------------------
+
+// Theme Setup Configuration: actions, filters etc
+require_once( IPRESS_CHILD_INCLUDES_DIR . '/config.php' );
+
+//end
