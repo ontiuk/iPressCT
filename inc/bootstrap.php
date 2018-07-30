@@ -37,6 +37,7 @@ define( 'IPRESS_CHILD_ADMIN_DIR',		IPRESS_CHILD_INCLUDES_DIR . '/admin' );
 define( 'IPRESS_CHILD_CONTROLS_DIR',	IPRESS_CHILD_INCLUDES_DIR . '/controls' );
 define( 'IPRESS_CHILD_SHORTCODES_DIR',	IPRESS_CHILD_INCLUDES_DIR . '/shortcodes' );
 define( 'IPRESS_CHILD_WIDGETS_DIR',		IPRESS_CHILD_INCLUDES_DIR . '/widgets' );
+define( 'IPRESS_CHILD_CLASSES_DIR',		IPRESS_CHILD_INCLUDES_DIR . '/classes' );
 
 // Directory Paths
 define( 'IPRESS_CHILD_URL',				get_theme_file_uri() );
@@ -86,7 +87,7 @@ $ipress_child = (object)[
 
 // Admin functionlity
 if ( is_admin() ) {
-	$ipress_child->admin = require_once IPRESS_CHILD_INCLUDES_DIR . '/class-admin.php';
+	$ipress_child->admin = require_once IPRESS_CHILD_CLASSES_DIR . '/class-admin.php';
 }
 
 //----------------------------------------------
