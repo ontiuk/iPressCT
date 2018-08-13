@@ -16,7 +16,7 @@
 //----------------------------------------------
 
 // Theme Name
-define( 'IPRESS_CHILD_THEME_NAME', 'iPressChild' );
+define( 'IPRESS_CHILD_THEME_NAME', 'iPress Child' );
 
 // Directory Structure
 define( 'IPRESS_CHILD_DIR', 			get_theme_file_path() );
@@ -73,23 +73,6 @@ require_once IPRESS_CHILD_INCLUDES_DIR . '/template-tags.php';
 //	Includes - Classes
 //----------------------------------------------
 
-// Set Up theme
-$child_theme			= wp_get_theme( IPRESS_CHILD_THEME_NAME );
-$ipress_child_version 	= $child_theme['Version'];
-
-// Initiate Main Registry, Scripts & Styles
-$ipress_child = (object)[
-
-	// Set theme
-	'theme'		=> $child_theme,
-	'version'	=> $ipress_child_version,
-];
-
-// Admin functionlity
-if ( is_admin() ) {
-	$ipress_child->admin = require_once IPRESS_CHILD_CLASSES_DIR . '/class-admin.php';
-}
-
 //----------------------------------------------
 //	Libraries & Plugins
 //----------------------------------------------
@@ -98,7 +81,7 @@ if ( is_admin() ) {
 //	Theme Settings
 //----------------------------------------------
 
-// Register theme object
-$GLOBALS['ipress_child'] = $ipress_child;
+// Theme Setup Configuration: actions, filters etc
+include_once IPRESS_CHILD_INCLUDES_DIR . '/config.php';
 
 //end
