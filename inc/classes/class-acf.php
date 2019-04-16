@@ -3,7 +3,8 @@
  * iPress - WordPress Theme Framework                       
  * ==========================================================
  *
- * ACF Plugin functionality
+ * Advanced Custom Fields (ACF) Plugin functionality.
+ * - Pro v5+ only.
  * 
  * @package     iPress\Includes
  * @link        http://ipress.uk
@@ -34,21 +35,21 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 		 *  e.g ipr_acf_pages[]
 		 *	
 		 *	'terms' => [ 
-		 *		'page_title'    => __( 'Terms and Conditions', 'ipress' ),
-		 *		'menu_title'    => __( 'Terms', 'ipress' ),
-		 *		'menu_slug'     => 'classworx-terms',
+		 *		'page_title'    => __( 'Terms and Conditions', 'ipress-child' ),
+		 *		'menu_title'    => __( 'Terms', 'ipress-child' ),
+		 *		'menu_slug'     => 'ipress-terms',
 		 *		'parent_slug' 	=> $parent['menu_slug']
 		 *	],
 		 *	'privacy' => [ 
-		 *		'page_title'    => __( 'Privacy Policy', 'ipress' ),
-		 *		'menu_title'    => __( 'Privacy', 'ipress' ),
-		 *		'menu_slug'     => 'classworx-privacy',
+		 *		'page_title'    => __( 'Privacy Policy', 'ipress-child' ),
+		 *		'menu_title'    => __( 'Privacy', 'ipress-child' ),
+		 *		'menu_slug'     => 'ipress-privacy',
 		 *		'parent_slug' 	=> $parent['menu_slug']
 		 *	],
 		 *	'Shipping' => [ 
-		 *		'page_title'    => __( 'Shipping Policy', 'ipress' ),
-		 *		'menu_title'    => __( 'Shipping', 'ipress' ),
-		 *		'menu_slug'     => 'classworx-shipping',
+		 *		'page_title'    => __( 'Shipping Policy', 'ipress-child' ),
+		 *		'menu_title'    => __( 'Shipping', 'ipress-child' ),
+		 *		'menu_slug'     => 'ipress-shipping',
 		 *		'parent_slug' 	=> $parent['menu_slug']
 		 *	]
 		 */
@@ -61,17 +62,17 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 			if ( ! function_exists('acf_add_options_page') ) { return; }
 
 			// Set or ignore options page
-			$acf_title = apply_filters( 'ipress_acf_title', 'iPress' ), 
+			$acf_title = apply_filters( 'ipress_acf_title', 'iPress Child' ); 
 			if ( empty( $acf_title ) ) { return; }
 
 			// Add Options Page
 			$parent = acf_add_options_page( [  
 				'title'      => $acf_title,
-				'capability' => apply_filters( 'ipress_acf_capability', 'manage_options' ), 
+				'capability' => apply_filters( 'ipress_acf_capability', 'manage_options' )
 			] ); 
 
 			// Set Options Page Subpages
-			$subpages = apply_filters( 'ipress_acf_pages', [] );
+			$subpages = apply_filters( 'ipress_acf_pages', [], $parent );
 	   
 			// Add Subpages? 
 			if ( $subpages ) {

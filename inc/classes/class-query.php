@@ -4,19 +4,19 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme initialisation for core WordPress query features
+ * Theme initialisation for core WordPress query features.
  * 
  * @package		iPress\Includes
  * @link		http://ipress.uk
  * @license		GPL-2.0+
  */
 
-if ( ! class_exists( 'IPR_Child_Query' ) ) :
+if ( ! class_exists( 'IPR_Query' ) ) :
 	
 	/**
 	 * Set up query manipulation functionality
 	 */ 
-	final class IPR_Child_Query {
+	final class IPR_Query {
 
 		/**
 		 * Class constructor
@@ -247,6 +247,6 @@ if ( ! class_exists( 'IPR_Child_Query' ) ) :
 endif;
 
 // Instantiate Query Class
-return new IPR_Child_Query;
+return new IPR_Query;
 
 //end

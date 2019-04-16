@@ -4,7 +4,7 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme template hooks - actions and filters
+ * Theme template hooks - actions and filters.
  * 
  * @package		iPress\Includes
  * @link		http://ipress.uk

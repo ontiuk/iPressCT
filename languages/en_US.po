@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-29 16:21+0000\n"
+"PO-Revision-Date: 2019-04-15 09:48+0100\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: author.php:28
+#, php-format
+msgid "Author: <span class=\"vcard\">%s</span>"
+msgstr "Author: <span class=\"vcard\">%s</span>"
+
+#: category.php:28
+#, php-format
+msgid "Category: %s"
+msgstr "Category: %s"
+
+#: tag.php:28
+#, php-format
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: taxonomy.php:30
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/widgets/class-widget-template.php:15
+msgid "iPress Widget Template"
+msgstr "iPress Widget Template"
+
+#: inc/widgets/class-widget-template.php:26
+msgid "iPress Widget"
+msgstr "iPress Widget"
+
+#: inc/widgets/class-widget-template.php:107
+msgid "Field 1"
+msgstr "Field 1"
+
+#: inc/widgets/class-widget-template.php:108
+msgid "Field 2"
+msgstr "Field 2"
+
+#: inc/widgets/class-widget-template.php:109
+msgid "Field 3"
+msgstr "Field 3"
+
+#: inc/widgets/class-widget-template.php:110
+msgid "Field 4"
+msgstr "Field 4"
+
+#: inc/widgets/class-widget-template.php:116
+msgid "Title:"
+msgstr "Title:"
+
+#: inc/widgets/class-widget-template.php:120
+msgid "Text:"
+msgstr "Text:"
+
+#: inc/widgets/class-widget-template.php:124
+msgid "Select Menu:"
+msgstr "Select Menu:"
+
+#: inc/widgets/class-widget-template.php:126
+msgid "&mdash; Select Field &mdash;"
+msgstr "&mdash; Select Field &mdash;"
+
+#: inc/widgets/class-widget-template.php:135
+msgid "Count"
+msgstr "Count"
+
+#: woocommerce/global/breadcrumbs/archive-account.php:21
+#: woocommerce/global/breadcrumbs/archive-cart.php:21
+#: woocommerce/global/breadcrumbs/archive-checkout.php:21
+#: woocommerce/global/breadcrumbs/archive-product.php:21
+#: woocommerce/global/breadcrumbs/archive-shop.php:21
+#: woocommerce/global/breadcrumbs/single-product.php:21
+#: woocommerce/global/breadcrumbs/taxonomy-product-cat.php:26
+#: woocommerce/global/breadcrumbs/taxonomy-product-tag.php:21
+msgid "Home"
+msgstr "Home"
+
+#: woocommerce/global/breadcrumbs/archive-account.php:22
+msgid "Account"
+msgstr "Account"
+
+#: woocommerce/global/breadcrumbs/archive-cart.php:22
+#: woocommerce/global/breadcrumbs/archive-checkout.php:22
+msgid "Shop"
+msgstr "Shop"
+
+#: woocommerce/global/breadcrumbs/single-product.php:22
+msgid "Products"
+msgstr "Products"
+
+#: woocommerce/global/breadcrumbs/taxonomy-product-tag.php:22
+msgid "Tag"
+msgstr "Tag"

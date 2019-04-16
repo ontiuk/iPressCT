@@ -4,9 +4,8 @@
  * iPress - WordPress Theme Framework                       
  * ==========================================================
  *
- * Theme functions file - bootstraps the child theme functionality
- * 
- * - Rename iPress to Child Theme Name
+ * Theme functions file - bootstraps the child theme functionality.
+ * - Rename iPress to Child Theme Name.
  * 
  * @package     iPress\Functions
  * @link        http://ipress.uk

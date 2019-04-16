@@ -1,0 +1,88 @@
+/*!
+Theme Name:     Snoreeze
+Theme URI:      https://snoreeze.com
+Author:         OnTiUK
+Author URI:     https://ipress.uk/
+Description:    Snoreeze Theme based on iPress Theme Framework
+Version:        1.0.0
+License:      	GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    ipress
+Tags:           snoreeze, wordpress, ipress, theme
+*/
+
+/*--------------------------------------------------------------
+ TABLE OF CONTENTS
+----------------------------------------------------------------
+# Global
+    ## Fonts
+    ## Functions
+    ## Variables
+    ## Mixins
+# Elements
+    ## Core ( html, body, hr etc ) 
+    ## Typography
+    ## Links
+    ## Headings
+    ## Lists
+    ## Tables
+    ## Images
+    ## Forms
+    ## Buttons
+# Layouts
+    ## Posts & pages
+    ## Content
+    ## Comments
+    ## Widgets
+    ## Shop
+        # Products
+        # Product
+        # Cart
+        # Checkout
+        # Account
+# Components
+    ## Navigation
+    ## Media
+        # Captions
+        # Galleries
+# Vendors
+    # Bootstrap-Select
+    # Owl-Carousel
+    # NoUI-Slider
+    # Woocommerce
+# Utilities
+    ## Accessibility
+    ## Alignments
+    ## Clearings
+--------------------------------------------------------------*/
+
+//--------------------------------------------------------------
+// Global - Functions, fonts, variables, mixins, config & reset
+//--------------------------------------------------------------*/
+@import "global/global";
+
+/*--------------------------------------------------------------
+# Elements - Unclassed HTML elements, selectors etc
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Components - Designed components, chunks of UI
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Layouts - Posts, pages & custom data layouts
+--------------------------------------------------------------*/
+@import "layouts/layouts";
+
+/*--------------------------------------------------------------
+# Vendors - Third-party styles, extensions & plugins
+--------------------------------------------------------------*/
+@import "vendors/vendors";
+
+/*--------------------------------------------------------------
+# Utilities - CSS Helpers and overrides
+--------------------------------------------------------------*/
+@import "utilities/utilities";
+

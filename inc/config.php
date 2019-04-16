@@ -4,7 +4,7 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme config file: actions, filters etc
+ * Theme config file: actions, filters etc.
  * 
  * @package		iPress\Config
  * @link		http://ipress.uk
@@ -14,6 +14,11 @@
 //----------------------------------------------
 //	Theme SetUp & Configuration
 //----------------------------------------------
+
+// Theme localization i18n - loads wp-content/themes/child-theme-name/languages/xx_XX.mo.
+add_action( 'after_setup_theme', function() {
+	load_theme_textdomain( 'ipress-child', get_stylesheet_directory() . '/languages' );
+} );
 
 //----------------------------------------------
 //	Theme Scripts, Styles & Fonts
@@ -100,26 +105,41 @@
 //	];
 //----------------------------------------------
 
-// Set up scripts - filterable array. See definitions for structure
-$ipress_scripts = [
-	'core' 		=> [ 'jquery' ],
-	'custom' 	=> [
-		'theme' => [ IPRESS_CHILD_JS_URL . '/theme.js', [ 'jquery' ], null ] 
-	],
-];
+// Register Scripts, Styles & Fonts: Scripts
+add_filter( 'ipress_scripts', function( $scripts ) {
 
-// Set up styless - filterable array. See definitions for structure
-$ipress_styles = [
-	'theme'  	=> [ 
-		'theme' => [ IPRESS_CHILD_URL . '/style.css', [], null ]
-	]
-];
+	// Set up child theme scripts
+	$ipress_scripts = [
+		'core' 		=> [ 'jquery' ],
+		'custom' 	=> [
+			'theme' => [ IPRESS_CHILD_JS_URL . '/theme.js', [ 'jquery' ], null ] 
+		],
+	];
 
-// Set up custom fonts
-$ipress_fonts = [ 
-	'family' => '', 
-	'subset' => '' 
-];
+	return ( empty ( $scripts ) ) ? $ipress_scripts : array_merge( $scripts, $ipress_scripts );
+} );
+
+// Register Scripts, Styles & Fonts: Styles
+add_filter( 'ipress_styles', function( $styles ) {
+
+	// Set up child theme styles
+	$ipress_styles = [
+		'theme'  	=> [ 
+			'theme' => [ IPRESS_CHILD_URL . '/style.css', [], 'ipress' ]
+		]
+	];
+
+	return ( empty ( $styles ) ) ? $ipress_styles : array_merge( $styles, $ipress_styles );
+} );
+
+// Register Scripts, Styles & Fonts: Fonts
+add_filter( 'ipress_fonts', function( $fonts ) {
+
+	// Set up child theme fonts
+	$ipress_fonts = [];
+
+	return ( empty ( $fonts ) ) ? $ipress_fonts : array_merge( $fonts, $ipress_fonts );
+} );
 
 //----------------------------------------------
 //	Theme Custom Post Types & Taxonomies
@@ -128,18 +148,18 @@ $ipress_fonts = [
 //	@see https://codex.wordpress.org/Function_Reference/register_taxonomy
 //	
 //	$post_types = [ 'cpt' => [ 
-//		'name'			=> __( 'CPT', 'ipress' ), 
-//		'plural'		=> __( 'CPTs', 'ipress' ),
-//		'description'	=> __( 'This is the CPT post type', 'ipress' ), 
+//		'name'			=> __( 'CPT', 'ipress-child' ), 
+//		'plural'		=> __( 'CPTs', 'ipress-child' ),
+//		'description'	=> __( 'This is the CPT post type', 'ipress-child' ), 
 //		'supports'		=> [ 'title', 'editor', 'thumbnail' ],
 //		'taxonomies'	=> [ 'cpt_tax' ],
 //		'args'			=> [], 
 //	] ];
 //
 //	$taxonomies = [ 'cpt_tax' => [ 
-//		'name'			=> __( 'Tax Name', 'ipress' ), 
-//		'plural'		=> __( 'Taxes', 'ipress' ),
-//		'description'	=> __( 'This is the Taxonomy name', 'ipress' ), 
+//		'name'			=> __( 'Tax Name', 'ipress-child' ), 
+//		'plural'		=> __( 'Taxes', 'ipress-child' ),
+//		'description'	=> __( 'This is the Taxonomy name', 'ipress-child' ), 
 //		'post_types'	=> [ 'cpt' ], 
 //		'args'			=> [],
 //		'column'		=> true, //optional
@@ -148,8 +168,32 @@ $ipress_fonts = [
 //	] ];
 //----------------------------------------------
 
-// Set up custom post types & taxonomies
-$ipress_post_types = $ipress_taxonomies = [];
+// Register Custom Post Types
+add_filter( 'ipress_custom_post_types', function( $post_types ) {
+
+	// Set up custom post types & taxonomies
+	$ipress_post_types = [];
+
+	return ( empty( $post_types ) ) ? $ipress_post_types : array_merge( $post_types, $ipress_post_types );
+} );
+
+// Register taxonomies
+add_filter( 'ipress_taxonomies', function( $taxonomies ) {
+	
+	// Set up custom taxonomies
+	$ipress_taxonomies = [];
+
+	return ( empty( $taxonomies ) ) ? $ipress_taxonomies : array_merge( $taxonomies, $ipress_taxonomies );
+} );
+
+//----------------------------------------------
+//	Images Configuration
+//----------------------------------------------
+
+// Add custom image size
+add_filter( 'ipress_add_image_size', function( $images ) {
+	return array_merge( $images, [] );
+} );
 
 //----------------------------------------------
 //	Shortcode Configuration
@@ -162,9 +206,19 @@ $ipress_post_types = $ipress_taxonomies = [];
 //	Sidebars Configuration
 //----------------------------------------------
 
+// Update default sidebars list
+add_filter( 'ipress_default_sidebars', function( $sidebars ) {
+	return $sidebars;
+} );
+
 //----------------------------------------------
 //	Widgets Configuration
 //----------------------------------------------
+
+// Add custom widget areas
+add_filter ( 'ipress_widgets', function() {
+	return [];
+} );
 
 //----------------------------------------------
 //	Custom Hooks & Filters
@@ -176,37 +230,15 @@ $ipress_post_types = $ipress_taxonomies = [];
 // - ACF 
 //------------------------------
 
+// Advanced Custom Fields Admin UI
+if ( is_admin() ) {
+	require_once IPRESS_CHILD_LIB_DIR . '/acf-config.php';
+}
+
 //--------------------------------------
 // Google 
 // - Analytics 
 // - Adwords Tracking
 //--------------------------------------
-
-//----------------------------------------------
-//	Set theme settings transient data
-//----------------------------------------------
-
-// Create theme objest
-$ipress_config = (object)[
-	'scripts' 		=> $ipress_scripts,
-	'styles'		=> $ipress_styles,
-	'fonts'			=> $ipress_fonts,
-	'post_types'	=> $ipress_post_types,
-	'taxonomies'	=> $ipress_taxonomies
-];
-
-// Create, replace, update, delete
-if ( false === ( $ipress_trans = get_transient( 'ipress_config' ) ) ) { 
-	set_transient( 'ipress_config', $ipress, DAY_IN_SECONDS );
-} else {
-	if ( $ipress_config == $ipress_trans ) {
-		set_transient( 'ipress_config', $ipress_trans, DAY_IN_SECONDS );
-	} else {
-		set_transient( 'ipress_config', $ipress_config, DAY_IN_SECONDS );
-	}	
-}
-
-// Tidy up global data
-unset( $ipress_scripts, $ipress_styles, $ipress_fonts, $ipress_post_types, $ipress_taxonomies, $ipress_config, $ipress_trans );
 
 //end

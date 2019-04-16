@@ -4,19 +4,19 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme specific WP-REST API functionality in-absentia of plugin
+ * Theme specific WP-REST API functionality in-absentia of plugin.
  * 
  * @package		iPress\Includes
  * @link		http://ipress.uk
  * @license		GPL-2.0+
  */
 
-if ( ! class_exists( 'IPR_Child_API' ) ) :
+if ( ! class_exists( 'IPR_API' ) ) :
 
 	/**
 	 * Set up WP-REST API functionality
 	 */ 
-	final class IPR_Child_API {
+	final class IPR_API {
 
 		/**
 		 * Class constructor
@@ -45,6 +45,6 @@ if ( ! class_exists( 'IPR_Child_API' ) ) :
 endif;
 
 // Instantiate REST API Class
-return new IPR_Child_API;
+return new IPR_API;
 
 //end

@@ -4,19 +4,19 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme initialisation for core WordPress features
+ * Theme initialisation for core WordPress user features.
  * 
  * @package		iPress\Includes
  * @link		http://ipress.uk
  * @license		GPL-2.0+
  */
 
-if ( ! class_exists( 'IPR_Child_User' ) ) :
+if ( ! class_exists( 'IPR_User' ) ) :
 
 	/**
 	 * Set up user features
 	 */ 
-	final class IPR_Child_User {
+	final class IPR_User {
 
 		/**
 		 * Class constructor
@@ -45,6 +45,6 @@ if ( ! class_exists( 'IPR_Child_User' ) ) :
 endif;
 
 // Instantiate User Class
-return new IPR_Child_User;
+return new IPR_User;
 
 //end
