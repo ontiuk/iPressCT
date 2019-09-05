@@ -150,15 +150,20 @@ add_filter( 'ipress_fonts', function( $fonts ) {
 //	$post_types = [ 'cpt' => [ 
 //		'name'			=> __( 'CPT', 'ipress-child' ), 
 //		'plural'		=> __( 'CPTs', 'ipress-child' ),
+//		'public'		=> false,
 //		'description'	=> __( 'This is the CPT post type', 'ipress-child' ), 
 //		'supports'		=> [ 'title', 'editor', 'thumbnail' ],
-//		'taxonomies'	=> [ 'cpt_tax' ],
-//		'args'			=> [], 
+//		'taxonomies'	=> [ 'post_tag', 'category' ],
+//		'args'			=> [
+//			'has_archive' => true,
+//			'show_in_rest' => true
+//		], 
 //	] ];
 //
 //	$taxonomies = [ 'cpt_tax' => [ 
 //		'name'			=> __( 'Tax Name', 'ipress-child' ), 
 //		'plural'		=> __( 'Taxes', 'ipress-child' ),
+//		'public'		=> false,
 //		'description'	=> __( 'This is the Taxonomy name', 'ipress-child' ), 
 //		'post_types'	=> [ 'cpt' ], 
 //		'args'			=> [],
