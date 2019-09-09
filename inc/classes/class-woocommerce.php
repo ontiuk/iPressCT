@@ -25,34 +25,37 @@ if ( ! class_exists( 'IPR_Woocommerce' ) ) :
 		public function __construct() {
 
 			// Include Woocommerce support
-			add_action( 'after_setup_theme', [ $this, 'woocommerce_setup' ] );
+			add_action( 'after_setup_theme', 			[ $this, 'woocommerce_setup' ] );
 
 			// Disable default Woocommerce styles @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/ 
-			add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' ); 
+			add_filter( 'woocommerce_enqueue_styles', 	'__return_empty_array' ); 
 
 			// Woocommerce body class
-			add_filter( 'body_class', 		[ $this, 'body_class' ] ); 
+			add_filter( 'body_class', 					[ $this, 'body_class' ] ); 
 
 	        // Header Cart Hook Modifications
-    	    add_action( 'init', 			[ $this, 'header_markup' ] );
+    	    add_action( 'init', 						[ $this, 'header_markup' ] );
 
 			// Product Archive Pages Hook Modifications
-			add_action( 'init', 			[ $this, 'product_archive_markup' ] );
+			add_action( 'init', 						[ $this, 'product_archive_markup' ] );
 			
 			// Single Product Page Hook Modifications
-			add_action( 'init', 			[ $this, 'single_product_markup' ] );
+			add_action( 'init', 						[ $this, 'single_product_markup' ] );
 
 			// Cart Page Hook Modification
-			add_action( 'init', 			[ $this, 'cart_markup' ] );
+			add_action( 'init', 						[ $this, 'cart_markup' ] );
 
 			// Checkout Page Hook Modification
-			add_action( 'init', 			[ $this, 'checkout_markup' ] );
+			add_action( 'init', 						[ $this, 'checkout_markup' ] );
 
 			// Checkout Page Hook Modification
-			add_action( 'init', 			[ $this, 'account_markup' ] );
+			add_action( 'init', 						[ $this, 'account_markup' ] );
 
 			// Turn off products pagination
-			add_action( 'pre_get_posts', 	[ $this, 'pre_get_posts' ] );
+			add_action( 'pre_get_posts', 				[ $this, 'pre_get_posts' ] );
+
+			// Only display Woocommerce on WC pages?
+			add_action( 'wp_enqueue_scripts', 			[ $this, 'disable_woocommerce_loading_css_js' ], 999 );
 		}
 
 		//----------------------------------------------
@@ -67,7 +70,8 @@ if ( ! class_exists( 'IPR_Woocommerce' ) ) :
 			// Add Woocommerce support, inc 3.x features
 			add_theme_support( 'woocommerce' ); 
 
-			$woo_gallery = apply_filters( 'ipress_wc_gallery', true );
+			// Add woocommerce gallery support
+			$woo_gallery = apply_filters( 'ipress_woocommerce_gallery', true );
 			if ( $woo_gallery ) {
 				add_theme_support( 'wc-product-gallery-zoom' ); 
 				add_theme_support( 'wc-product-gallery-lightbox' ); 
@@ -106,6 +110,57 @@ if ( ! class_exists( 'IPR_Woocommerce' ) ) :
     		}
 
 		    return $query;
+		}
+
+		/**
+		 * Disable woocommerce css & js in non-wc pages
+		 */
+		public function disable_woocommerce_loading_css_js() {
+
+			// Front-end only
+			if ( is_admin() ) { return; }
+
+			// Disable Woocommerce loading css & js
+			$disable_css_js = apply_filters( 'ipress_woocommerce_disable_js_css', false );
+			if ( ! $disable_css_js ) { return; }
+
+			// Check if it's any of WooCommerce page
+			if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
+					
+				// Dequeue WooCommerce styles
+				$disable_layout = (array) apply_filters( 'ipress_woocommerce_disable_layout', true );
+				if ( $disable_layout ) {
+					wp_dequeue_style('woocommerce-layout'); 
+					wp_dequeue_style('woocommerce-general'); 
+					wp_dequeue_style('woocommerce-smallscreen');
+				}
+
+				// Dequeue Woocommerce plugin styles: [ name, name2, name3 ]
+				$add_styles = (array) apply_filters( 'ipress_woocommerce_disable_css', [] );
+				foreach ( $add_styles as $style ) {
+					wp_dequeue_style( $style );
+				}
+			
+				## Dequeue WooCommerce scripts
+				$disable_cart = (array) apply_filters( 'ipress_woocommerce_disable_cart', true );
+				if ( $disable_cart ) {
+					wp_dequeue_script('wc-cart-fragments');
+					wp_dequeue_script('woocommerce'); 
+					wp_dequeue_script('wc-add-to-cart'); 
+				
+					wp_deregister_script( 'js-cookie' );
+					wp_dequeue_script( 'js-cookie' );
+				}
+
+				// Dequeue Woocommerce plugin scripts: [ [ 'name' => xxxx, 'register' = true ], [...] ]
+				$add_scripts = (array) apply_filters( 'ipress_woocommerce_disable_js', [] );
+				foreach ( $add_scripts as $script ) {
+					if ( isset( $script['register'] ) && $script['register'] ) {
+						wp_deregister_script( $script['name'] );
+					}
+					wp_dequeue_script( $script['name'] );
+				}
+			}	
 		}
 
 	    //----------------------------------------------

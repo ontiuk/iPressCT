@@ -45,20 +45,20 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 			// Set the POSTS WHERE clause for the SQL query 
 			//add_filter( 'posts_where' , [ $this, 'posts_where' ] );
 
-			// Customise the Post Type query if a taxonomy term is used
-			//add_action( 'pre_get_posts', [ $this, 'post_type_archives' ] );
-
-			// Exclude category posts from home page - defaults to unclassified
-			//add_action( 'pre_get_posts', [ $this, 'exclude_categories' ] );
-
 			// Query post clauses
 			//add_filter( 'posts_clauses', [ $this, 'posts_clauses' ] );
 
 			// Term query clauses
 			//add_filter( 'terms_clauses', [ $this, 'terms_clauses' ] );
+			
+			// Customise the Post Type query if a taxonomy term is used
+			add_action( 'pre_get_posts', [ $this, 'post_type_archives' ] );
+
+			// Exclude category posts from home page - defaults to unclassified
+			add_action( 'pre_get_posts', [ $this, 'exclude_categories' ] );
 
 			// Add custom post types to Search
-			//add_action( 'pre_get_posts', [ $this, 'search_include' ] );
+			add_action( 'pre_get_posts', [ $this, 'search_include' ] );
 		}
 
 		//----------------------------------------------
@@ -177,7 +177,7 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 			if ( empty( $post_types ) ) { return; }
 			
 			// Main query & post-types
-			if ( $query->is_main_query() && !is_admin() && $query->is_post_type_archive( $post_types ) ) {
+			if ( $query->is_main_query() && ! is_admin() && $query->is_post_type_archive( $post_types ) ) {
 
 				// Only if taxonomy set modify query
 				if ( is_tax() ) {

@@ -61,7 +61,7 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 			// Check Options Page OK        
 			if ( ! function_exists('acf_add_options_page') ) { return; }
 
-			// Set or ignore options page
+			// Set theme options page title, or turn off
 			$acf_title = apply_filters( 'ipress_acf_title', 'iPress Child' ); 
 			if ( empty( $acf_title ) ) { return; }
 
