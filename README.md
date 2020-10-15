@@ -1,4 +1,4 @@
-iPress PT - WordPress Theme Framework 
+iPress CT - WordPress Theme Framework 
 =======================================
 
 http://on.tinternet.co.uk
