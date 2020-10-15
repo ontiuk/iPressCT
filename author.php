@@ -18,27 +18,35 @@
 
 <?php do_action( 'ipress_before_main_content' ); ?>
 
-	<main id="main" class="site-main author-page">
+	<main id="main" class="site-content author-page">
 
 	<?php do_action( 'ipress_archive_before' ); ?>
 
-	 <?php if ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) : the_post(); ?>
 
 		<header class="page-header">
-			<h1 class="page-title author-title"><?= sprintf( __( 'Author: <span class="vcard">%s</span>', 'ipress-child' ), get_the_author() ); ?></h1>
+		<?php 
+			$author_name = sprintf(
+				/* translators: %s: author name */
+				__( 'Author: <span class="post-author">%s</span>', 'ipress-child' ), 
+				get_the_author() 
+			); 
+		?>
+			<h1 class="page-title author-title"><?php echo wp_kses_post( $author_name ); ?></h1>
 		</header><!-- .page-header -->
 
-		<?php if ( get_the_author_meta( 'description' ) ) : ?>
+		<?php $author_description = get_the_author_meta( 'description' ); ?>
+		<?php if ( $author_description ) : ?>
 		<section class="content-author">
-			<?= wpautop( get_the_author_meta( 'description' ) ); ?>
+			<?php echo esc_html( wpautop( $author_description ) ); ?>
 		</section>	  
 		<?php endif; ?>
-	
+
 		<?php rewind_posts(); ?>
 
 		<?php get_template_part( 'templates/archive' ); ?>
 
-	<?php else: ?>
+	<?php else : ?>
 
 		<?php get_template_part( 'templates/global/content', 'none' ); ?>
 
@@ -46,10 +54,10 @@
 
 	<?php do_action( 'ipress_archive_after' ); ?>
 
-	</main><!-- #main / .site-main -->
+    </main><!-- #main / .site-content -->
+
+	<?php do_action( 'ipress_sidebar' ); ?>
 
 <?php do_action( 'ipress_after_main_content' ); ?>
-
-<?php do_action( 'ipress_sidebar' ); ?>
 
 <?php get_footer();

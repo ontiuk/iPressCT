@@ -13,9 +13,19 @@ body {
 }
 
 section {
-    padding: 3rem 0;
-    header {
-        margin-bottom: 1.5rem;
-    }
+    padding: 0;
 }
 
+main {
+    padding: 1.5rem 0;
+}
+
+hr {
+    border-top: $hr-border-width solid $hr-border-color;
+}
+
+small,
+.small {
+    font-size: $small-font-size;
+    font-weight: $font-weight-normal;
+}

@@ -4,7 +4,7 @@
  * iPress - WordPress Base Theme					   
  * ==========================================================
  *
- * Theme shortcodes
+ * Theme shortcodes.
  *
  * @package		iPress\Shortcodes
  * @link		http://ipress.uk

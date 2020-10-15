@@ -20,7 +20,6 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 
 		/**
 		 * Class constructor
-		 * - set up hooks
 		 */
 		public function __construct() {
 
@@ -75,53 +74,41 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		/**
 		 * Set the Group By clause
 		 *
-		 * @global	$wpdb
-		 * @param	string
-		 * @return	string
+		 * @param	string	$groupby
+		 * @return	string	$groupby
 		 */
-		public function posts_groupby( $groupby ) {
-		
-			global $wpdb;
-
-			return $groupby;
-		}
+		public function posts_groupby( $groupby ) { return $groupby; }
 
 		/**
 		 * Set the table join parameters
 		 * 
-		 * @param	string
-		 * @return	string
+		 * @param	string	$join
+		 * @return	string	$join
 		 */
-		public function posts_join( $join ) { 
-			return $join; 
-		}
+		public function posts_join( $join ) { return $join; }
 
 		/**
 		 * Set the return limiter
 		 * 
-		 * @param	integer
-		 * @param	string
-		 * @return	string
+		 * @param	integer	$limit
+		 * @param	string	$query
+		 * @return	integer	$limit
 		 */
-		public function posts_limit( $limit, $query ) {
-			return $limit;
-		}
+		public function posts_limit( $limit, $query ) { return $limit; }
 
 		/**
 		 * Set the orderby clause
 		 * 
-		 * @param	string
-		 * @return	string
+		 * @param	string	$orderby
+		 * @return	string	$orderby
 		 */
-		public function posts_orderby( $orderby ) {
-			return $orderby;
-		}
+		public function posts_orderby( $orderby ) { return $orderby; }
 
 		/**
 		 * Set the paged join clause
 		 * 
-		 * @param	string
-		 * @return	string
+		 * @param	string	$join_paged
+		 * @return	string	$join_paged	
 		 */
 		public function posts_join_paged( $join_paged ) {
 			return $join_paged; 
@@ -130,22 +117,18 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		/**
 		 * Set the where clause
 		 * 
-		 * @param	string
-		 * @return	string
+		 * @param	string	$where
+		 * @return	string	$where
 		 */
-		public function posts_where( $where ) { 
-			return $where; 
-		}
+		public function posts_where( $where ) { return $where; }
 
 		/**
 		 * Posts Clauses
 		 *
 		 * @param	array	$pieces
-		 * @return	array
+		 * @return	array	$pieces
 		 */
-		public function posts_clauses( $pieces ) {
-			return $pieces;
-		}
+		public function posts_clauses( $pieces ) { return $pieces; }
 
 		//----------------------------------------------  
 		// Terms Query Filters
@@ -155,11 +138,9 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		 * Terms Clauses
 		 *
 		 * @param	array	$pieces
-		 * @return	array
+		 * @return	array	$pieces
 		 */
-		public function terms_clauses( $pieces ) {
-			return $pieces;
-		}
+		public function terms_clauses( $pieces ) { return $pieces; }
 
 		//----------------------------------------------  
 		// Main Query Manipulation
@@ -168,16 +149,16 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		/**
 		 * Customise the Post Type query if a taxonomy term is used
 		 *
-		 * @param	object	WP_Query
+		 * @param	object	$query WP_Query
 		 */
 		function post_type_archives( $query ) {
 
 			// Set up filterable post-types
-			$post_types = apply_filters( 'ipress_query_post_type_archives', [] );
-			if ( empty( $post_types ) ) { return; }
+			$ip_query_post_type_archives = (array) apply_filters( 'ipress_query_post_type_archives', [] );
+			if ( empty( $ip_query_post_type_archives ) ) { return; }
 			
 			// Main query & post-types
-			if ( $query->is_main_query() && ! is_admin() && $query->is_post_type_archive( $post_types ) ) {
+			if ( $query->is_main_query() && ! is_admin() && $query->is_post_type_archive( $ip_query_post_type_archives ) ) {
 
 				// Only if taxonomy set modify query
 				if ( is_tax() ) {
@@ -200,16 +181,16 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		/**
 		 * Exclude uncategorised posts from home/posts page
 		 *
-		 * @param object WP_Query
+		 * @param object $query WP_Query
 		 */
 		public function exclude_categories( $query ) {
 
 			// Select categories to exclude: default 'uncategorised'
-			$exc_cats = apply_filters( 'ipress_exclude_category', ['-1'] );
+			$ip_query_exclude_category = (array) apply_filters( 'ipress_query_exclude_category', [ '-1' ] );
 				
 			// Main query & home page
-			if ( $query->is_home() && $query->is_main_query() && $exc_cats ) {
-				$cats = array_map( [ $this, 'exclude_category_map' ], $exc_cats );
+			if ( $ip_query_exclude_category && $query->is_home() && $query->is_main_query() ) {
+				$cats = array_map( [ $this, 'exclude_category_map' ], $ip_query_exclude_category );
 				$cats = join( ',', $cats );
 				$query->set( 'cat', $cats );
 			}
@@ -218,28 +199,26 @@ if ( ! class_exists( 'IPR_Query' ) ) :
 		/**
 		 * Map excluded categories to negatives
 		 *
-		 * @param string
+		 * @param string	$cat
 		 * @return integer
 		 */ 
 		private function exclude_category_map( $cat ) {
-			$cat = (int)$cat;
-			return ( $cat <= 0 ) ? $cat : ( -1 * $cat );
+			return abs( $cat );
 		}
 
 		/**
 		 * Customize search post-types
 		 *
-		 * @param object $query WP_Query object
+		 * @param object $query WP_Query
 		 */
 		public function search_include( $query ) {
 
 			// Set search post types
-			$post_types = apply_filters( 'ipress_query_search_include', [] );
-			if ( empty( $post_types ) ) { return; }
+			$ip_query_search_include = (array) apply_filters( 'ipress_query_search_include', [] );
 
 			// Main query search
-			if ( ! is_admin() && $query->is_main_query() && $query->is_search && $post_type ) {
-				$query->set( 'post_type', [ $post_types ] );
+			if ( $ip_query_search_include && ! is_admin() && $query->is_main_query() && $query->is_search ) {
+				$query->set( 'post_type', [ $ip_query_search_include ] );
 			}
 		}
 	}

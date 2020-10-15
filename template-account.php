@@ -18,7 +18,7 @@
 
 <?php do_action( 'ipress_before_main_content' ); ?>
 
-	<main id="main" class="site-main account-page">
+	<main id="main" class="site-content account-page">
 
 	<?php do_action( 'ipress_page_before' ); ?>
 
@@ -34,7 +34,7 @@
 
 	<?php do_action( 'ipress_page_after' ); ?>
 
-	</main><!-- #main -->
+    </main><!-- #main / .site-content -->
 
 <?php do_action( 'ipress_after_main_content' ); ?>
 

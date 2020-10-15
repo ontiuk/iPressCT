@@ -2,3 +2,20 @@
 // Elements - Links ( A tag etc ).
 //
 
+a,
+span,
+i,
+small {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a {
+    color: $link-color;
+    text-decoration: $link-decoration;
+    @include hover-focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+    transition: all 0.3s;
+}

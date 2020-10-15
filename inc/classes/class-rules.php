@@ -20,14 +20,12 @@ if ( ! class_exists( 'IPR_Rules' ) ) :
 
 		/**
 		 * Class constructor
-		 * - set up hooks
 		 */
-		public function __construct() {	}
+		public function __construct() {}
 
 		//----------------------------------------------
 		//	Rewrite Rules
 		//----------------------------------------------
-
 	}
 
 endif;

@@ -2,3 +2,47 @@
 // Components - Navigation & dropdown styling
 //
 
+.navbar {
+    padding: $navbar-padding-y $navbar-padding-x;
+}
+
+.navbar-brand {
+    display: inline-block;
+	padding:0;
+    margin-right: $navbar-padding-x;
+    font-size: $navbar-brand-font-size;
+	max-width: 12.5rem;
+ 	@include media-breakpoint-up(sm) { 
+		max-width: 17.25rem;
+    }		
+ 	@include media-breakpoint-up(lg) { 
+		max-width: 18.75rem;
+    }
+ 	@include media-breakpoint-up(xl) { 
+		position: absolute;
+		z-index: 99; 
+    }	
+}
+
+.navbar-toggler {
+    padding: 0;
+    font-size: $navbar-toggler-font-size;
+    line-height: 1;
+    border: $border-width solid theme-color('button');
+    @include border-radius($navbar-toggler-border-radius);
+    i {
+        padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+        color: theme-color('button');
+        &:hover { color: $gray-200; } 
+    }
+    &:hover { 
+        background-color: theme-color('button');
+        i {
+            color: $gray-200;
+        }
+    }
+    &:focus {
+        outline: none !important;
+    }
+}
+

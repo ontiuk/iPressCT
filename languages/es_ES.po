@@ -1,0 +1,580 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-08 17:15+0100\n"
+"PO-Revision-Date: 2020-10-08 17:27+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Language: es\n"
+
+#: author.php:31
+#, php-format
+msgid "Author: <span class=\"vcard\">%s</span>"
+msgstr "Autor: <span class=\"vcard\">%s</span>"
+
+#: category.php:31
+#, php-format
+msgid "Category: %s"
+msgstr "Categoría: %s"
+
+#: comments.php:33
+#, php-format
+msgctxt "comments title"
+msgid "One comment on &ldquo;%s&rdquo;"
+msgstr "Un pensamiento en &ldquo;%s&rdquo;"
+
+#: comments.php:38
+#, php-format
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comment on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un pensamiento en &ldquo;%2$s&rdquo;"
+msgstr[1] "Pensamientos de %1$s sobre &ldquo;%2$s&rdquo;"
+
+#: comments.php:50
+msgid "Leave a comment."
+msgstr "Deja un comentario."
+
+#: comments.php:74
+msgid "Newer Comments"
+msgstr "Comentarios mas Nuevos"
+
+#: comments.php:75
+msgid "Older Comments"
+msgstr "Comentarios Antiguos"
+
+#: comments.php:85
+msgid "Comments"
+msgstr "Comentarios"
+
+#: comments.php:102
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#: index.php:31
+msgid "Our Latest Posts"
+msgstr "Nuestras últimas publicaciones"
+
+#: search.php:34
+#, php-format
+msgid "Search: %1$s Results for <span class=\"search-query\">%2$s</span>"
+msgstr "Buscar: %1$s Resultados para <span class=\"search-query\">%2$s</span>"
+
+#: searchform.php:19
+msgctxt "Search label"
+msgid "Search for:"
+msgstr "Buscar:"
+
+#: searchform.php:20
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Buscar &hellip;"
+
+#: searchform.php:22
+msgctxt "Submit button"
+msgid "Search"
+msgstr "Buscar"
+
+#: tag.php:30
+#, php-format
+msgid "Tag: %s"
+msgstr "Etiqueta: %s"
+
+#: taxonomy.php:32
+#, php-format
+msgid "Taxonomy: %1$s: %2$s"
+msgstr "Taxonomía: %1$s: %2$s"
+
+#: inc/template-functions.php:262
+msgctxt "Next post"
+msgid "Next"
+msgstr "Próximo"
+
+#: inc/template-functions.php:263
+msgctxt "Previous post"
+msgid "Previous"
+msgstr "Anterior"
+
+#: inc/template-functions.php:361
+msgid "Next post:"
+msgstr "Publicación siguiente:"
+
+#: inc/template-functions.php:362
+msgid "Previous post:"
+msgstr "Publicación anterior:"
+
+#: inc/classes/class-settings.php:83
+msgid "Background"
+msgstr "Antecedentes"
+
+#: inc/classes/class-settings.php:92
+msgid "Header"
+msgstr "Encabezamiento"
+
+#: inc/classes/class-settings.php:103
+msgid "Footer"
+msgstr "Pie de página"
+
+#: inc/classes/class-settings.php:104
+msgid "Footer content"
+msgstr "Contenido de pie de página"
+
+#: inc/classes/class-settings.php:127
+msgid "Additional JS"
+msgstr "JS adicional"
+
+#: inc/classes/class-settings.php:128
+msgid "Add custom header & footer js."
+msgstr "Agregar encabezado personalizado y pie de página js."
+
+#: inc/classes/class-settings.php:145
+msgid "Custom header JS"
+msgstr "JS de encabezado personalizado"
+
+#: inc/classes/class-settings.php:146
+msgid "Custom inline header js. Exclude <script></script> tag."
+msgstr ""
+"Encabezado en línea personalizado js. Excluya la etiqueta <script></script>."
+
+#: inc/classes/class-settings.php:165
+msgid "Custom footer JS"
+msgstr "Pie de página personalizado js"
+
+#: inc/classes/class-settings.php:166
+msgid "Custom inline footer js. Exclude <script></script> tag."
+msgstr ""
+"Pie de página en línea personalizado js. Excluya la etiqueta <script></"
+"script>."
+
+#: inc/classes/class-settings.php:185
+msgid "Custom admin header JS"
+msgstr "JS de encabezado de administrador personalizado"
+
+#: inc/classes/class-settings.php:186
+msgid "Custom inline admin header js. Exclude <script></script> tag."
+msgstr ""
+"Encabezado de administrador en línea personalizado js. Excluya la etiqueta "
+"<script></script>."
+
+#: inc/classes/class-settings.php:205
+msgid "Custom admin footer JS"
+msgstr "JS de encabezado de administrador personalizado"
+
+#: inc/classes/class-settings.php:206
+msgid "Custom inline admin footer js. Exclude <script></script> tag."
+msgstr ""
+"Pie de página de administrador en línea personalizado js. Excluya la "
+"etiqueta <script></script>."
+
+#: inc/classes/class-settings.php:233 inc/classes/class-settings.php:636
+msgid "Theme"
+msgstr "Theme"
+
+#: inc/classes/class-settings.php:234
+msgid "Add theme specific settings."
+msgstr "Agregar configuraciones específicas del tema."
+
+#: inc/classes/class-settings.php:258 inc/classes/class-settings.php:661
+msgid "Breadcrumbs"
+msgstr "Migas de pan"
+
+#: inc/classes/class-settings.php:259
+msgid "Display or hide the inner page breadcrumbs."
+msgstr "Muestra u oculta las rutas de navegación de la página interior."
+
+#: inc/classes/class-settings.php:290
+msgid "Page Content Layout"
+msgstr "Diseño del contenido de la página"
+
+#: inc/classes/class-settings.php:295
+msgid "Content section left or right layout."
+msgstr "Diseño de la sección de contenido izquierda o derecha."
+
+#: inc/classes/class-settings.php:297
+msgid "Default, Full Width Content"
+msgstr "Contenido de ancho completo predeterminado"
+
+#: inc/classes/class-settings.php:298
+msgid "Content - Sidebar"
+msgstr "Contenido - Barra lateral"
+
+#: inc/classes/class-settings.php:299
+msgid "Sidebar - Content"
+msgstr "Barra lateral - Contenido"
+
+#: inc/classes/class-settings.php:340
+msgid "Hero"
+msgstr "Héroe"
+
+#: inc/classes/class-settings.php:341
+msgid "Front page hero image and details"
+msgstr "Imagen y detalles del héroe de la portada"
+
+#: inc/classes/class-settings.php:363
+msgid "Front Page Hero Area"
+msgstr "Área de héroe de portada"
+
+#: inc/classes/class-settings.php:364
+msgid "Display or hide the front page hero section."
+msgstr "Mostrar u ocultar la sección de héroe de la portada."
+
+#: inc/classes/class-settings.php:405
+msgid "Hero Title"
+msgstr "Título de héroe"
+
+#: inc/classes/class-settings.php:406
+msgid "Modify the front page hero section title"
+msgstr "Modificar el título de la sección de héroe de la portada"
+
+#: inc/classes/class-settings.php:428
+msgid "Hero Description"
+msgstr "Descripción del héroe"
+
+#: inc/classes/class-settings.php:429
+msgid "Modify the front page hero section description"
+msgstr "Modificar la descripción de la sección de héroe de la portada"
+
+#: inc/classes/class-settings.php:451
+msgid "Button Page Link"
+msgstr "Enlace de página de botones"
+
+#: inc/classes/class-settings.php:452
+msgid "Link to page via button"
+msgstr "Enlace a la página mediante el botón"
+
+#: inc/classes/class-settings.php:466 templates/front/hero.php:27
+msgid "Learn More"
+msgstr "Aprende más"
+
+#: inc/classes/class-settings.php:474
+msgid "Hero Button Text"
+msgstr "Texto del botón de héroe"
+
+#: inc/classes/class-settings.php:475
+msgid "Hero button text"
+msgstr "Texto del botón de héroe"
+
+#: inc/classes/class-settings.php:498
+msgid "Hero Image"
+msgstr "Imagen de héroe"
+
+#: inc/classes/class-settings.php:499
+msgid "Add the hero section background image"
+msgstr "Agregar la imagen de fondo de la sección de héroe"
+
+#: inc/classes/class-settings.php:525
+msgid "Hero Background Color"
+msgstr "Color de fondo del héroe"
+
+#: inc/classes/class-settings.php:526
+msgid "Hero background color"
+msgstr "Color de fondo del héroe"
+
+#: inc/classes/class-settings.php:547
+msgid "Hero Overlay"
+msgstr "Superposición de héroe"
+
+#: inc/classes/class-settings.php:548
+msgid "Display an overlay with opacity on the hero image."
+msgstr "Mostrar una superposición con opacidad en la imagen del héroe."
+
+#: inc/classes/class-settings.php:570
+msgid "Hero Overlay Color"
+msgstr "Color de superposición de héroe"
+
+#: inc/classes/class-settings.php:571
+msgid "Hero overlay color"
+msgstr "Color de superposición de héroe"
+
+#: inc/classes/class-settings.php:589
+msgid "Value must be between 0 and 100"
+msgstr "El valor debe estar entre 0 y 100"
+
+#: inc/classes/class-settings.php:599
+msgid "Hero Overlay Opacity"
+msgstr "Opacidad de superposición de héroe"
+
+#: inc/classes/class-settings.php:600
+msgid "Hero overlay opacity"
+msgstr "Opacidad de superposición de héroe"
+
+#: inc/classes/class-settings.php:637
+msgid "Add theme specific Woocommerce settings."
+msgstr "Agregue configuraciones de Woocommerce específicas para el tema."
+
+#: inc/classes/class-settings.php:662
+msgid "Display or hide the store pages breadcrumbs."
+msgstr "Muestra u oculta las rutas de navegación de las páginas de la tienda."
+
+#: inc/classes/class-settings.php:702
+msgid "Shortcode"
+msgstr "Código corto"
+
+#: inc/classes/class-settings.php:703
+msgid "Theme shortcode settings"
+msgstr "Configuración del código corto del tema"
+
+#: inc/classes/class-settings.php:870
+msgid "Content Sidebar"
+msgstr "Contenido Barra lateral"
+
+#: inc/classes/class-settings.php:871
+msgid "Sidebar Content"
+msgstr "Barra lateral Contenido"
+
+#: inc/classes/class-settings.php:910
+msgid "Comma separated list of category IDs only."
+msgstr "Lista separada por comas de ID de categoría solamente."
+
+#: inc/classes/class-woocommerce.php:273
+msgid "Add to basket"
+msgstr "Añadir al carrito"
+
+#: inc/classes/class-woocommerce.php:273 inc/classes/class-woocommerce.php:276
+#: inc/classes/class-woocommerce.php:282
+msgid "Read more"
+msgstr "Lee mas"
+
+#: inc/classes/class-woocommerce.php:276
+msgid "Select options"
+msgstr "Seleccione opciones"
+
+#: inc/classes/class-woocommerce.php:278
+msgid "View products"
+msgstr "Ver productos"
+
+#: inc/classes/class-woocommerce.php:280
+msgctxt "placeholder"
+msgid "Buy product"
+msgstr "Comprar producto"
+
+#: inc/functions/product.php:76
+#, php-format
+msgid "Theme Requires Woocommerce %1$s. Version %2$s installed"
+msgstr "El tema requiere Woocommerce %1$s. Versión %2$s instalada"
+
+#: inc/lib/acf/sample.php:23
+msgid "Sample Section"
+msgstr "Sección de Marcas"
+
+#: inc/lib/acf/sample.php:27
+msgid "Sample Label"
+msgstr "Etiqueta de muestra"
+
+#: templates/global/404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "¡Uy! Esa página no se puede encontrar."
+
+#: templates/global/404.php:21
+msgid "Return home?"
+msgstr "¿Volver a casa?"
+
+#: templates/global/404.php:25
+msgid "Nothing found at this location."
+msgstr "No se encontró nada en este lugar."
+
+#: templates/global/content-none.php:21
+msgid "Nothing to display."
+msgstr "Nada que mostrar."
+
+#: templates/global/content-none.php:31
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Listo para publicar su primer post? <a href=\"%1$s\">Comience aquí</a>."
+
+#: templates/global/content-none.php:44
+msgid ""
+"Sorry, nothing matched your search terms. Please try again with different "
+"keywords."
+msgstr ""
+"Lo sentimos, nada coincide con sus términos de búsqueda. Intente nuevamente "
+"con diferentes palabras clave."
+
+#: templates/global/content-none.php:49
+msgid ""
+"We can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can "
+"help."
+msgstr ""
+"No podemos encontrar lo que estás buscando. Quizás la búsqueda pueda ayudar."
+
+#: templates/global/loader.php:16
+msgid "loading..."
+msgstr "cargando..."
+
+#: templates/global/skip-links.php:14
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#: templates/global/breadcrumbs/archive-cpt.php:24
+#: templates/global/breadcrumbs/archive.php:18
+#: templates/global/breadcrumbs/author.php:18
+#: templates/global/breadcrumbs/category.php:18
+#: templates/global/breadcrumbs/date.php:31
+#: templates/global/breadcrumbs/home.php:18
+#: templates/global/breadcrumbs/page.php:18
+#: templates/global/breadcrumbs/search.php:18
+#: templates/global/breadcrumbs/single.php:18
+#: templates/global/breadcrumbs/tag.php:19
+#: templates/global/breadcrumbs/taxonomy.php:55
+#: woocommerce/global/breadcrumbs/account.php:24
+#: woocommerce/global/breadcrumbs/cart.php:24
+#: woocommerce/global/breadcrumbs/checkout.php:24
+#: woocommerce/global/breadcrumbs/product-archive.php:27
+#: woocommerce/global/breadcrumbs/product-cat.php:27
+#: woocommerce/global/breadcrumbs/product-cat.php:30
+#: woocommerce/global/breadcrumbs/product-tag.php:27
+#: woocommerce/global/breadcrumbs/single-product.php:27
+msgid "Home"
+msgstr "Casa"
+
+#: templates/global/breadcrumbs/archive.php:19
+msgid "Archive"
+msgstr "Archivo"
+
+#: templates/global/breadcrumbs/author.php:19
+msgid "Author"
+msgstr "Autor"
+
+#: templates/global/breadcrumbs/category.php:19
+msgid "Category"
+msgstr "Categoría"
+
+#: templates/global/breadcrumbs/date.php:18
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: templates/global/breadcrumbs/date.php:21
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: templates/global/breadcrumbs/date.php:24
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: templates/global/breadcrumbs/search.php:19
+msgid "Search"
+msgstr "Buscar"
+
+#: templates/global/breadcrumbs/tag.php:20
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: templates/global/breadcrumbs/taxonomy.php:18
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Asides"
+
+#: templates/global/breadcrumbs/taxonomy.php:21
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galerías"
+
+#: templates/global/breadcrumbs/taxonomy.php:24
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Imágenes"
+
+#: templates/global/breadcrumbs/taxonomy.php:27
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Videos"
+
+#: templates/global/breadcrumbs/taxonomy.php:30
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Citas"
+
+#: templates/global/breadcrumbs/taxonomy.php:33
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Enlaces"
+
+#: templates/global/breadcrumbs/taxonomy.php:36
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Estados"
+
+#: templates/global/breadcrumbs/taxonomy.php:39
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: templates/global/breadcrumbs/taxonomy.php:42
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Chats"
+
+#: templates/global/footer/site-credit.php:27
+#, php-format
+msgid "Theme %1$s by %2$s."
+msgstr "Tema %1$s por %2$s."
+
+#: templates/global/header/site-navigation.php:15
+msgid "Menu"
+msgstr "Menú"
+
+#: templates/loop/content.php:20 templates/single/content.php:21
+#, php-format
+msgid "Continue reading %s"
+msgstr "Continuar leyendo %s"
+
+#: templates/loop/content.php:27 templates/page/content.php:23
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: templates/loop/footer.php:24 templates/single/footer.php:24
+msgid "Posted in"
+msgstr "Publicado en"
+
+#: templates/loop/footer.php:27 templates/single/footer.php:27
+msgid "Tagged in"
+msgstr "Etiquetado en"
+
+#: templates/loop/header.php:22
+msgctxt "post"
+msgid "Featured"
+msgstr "Destacados"
+
+#: templates/loop/meta.php:42 templates/single/meta.php:42
+msgid "Posted on"
+msgstr "Publicado en"
+
+#: templates/loop/meta.php:69 templates/single/meta.php:69
+#, php-format
+msgid ""
+"By <span class=\"post-author\"><a href=\"%1$s\" class=\"post-author-link\" "
+"rel=\"author\"><span class=\"post-author-name\">%2$s</span></a></span>"
+msgstr ""
+"Por<span class=\"post-author\"><a href=\"%1$s\" class=\"post-author-link\" "
+"rel=\"author\"><span class=\"post-author-name\">%2$s</span></a></span>"
+
+#: templates/page/edit_link.php:20 templates/single/edit-link.php:20
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Editar<span class=\"screen-reader-text\">\"%s\"</span>"
+
+#: woocommerce/global/breadcrumb.php:68
+#, php-format
+msgid "No Woocommerce Breadcrumb for this type [%s] yet!"
+msgstr ""
+"¡Aún no hay una ruta de navegación de Woocommerce para este tipo [%s]!"
+
+#: woocommerce/global/breadcrumbs/account.php:25
+msgid "Account"
+msgstr "Cuenta"

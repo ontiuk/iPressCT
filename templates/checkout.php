@@ -18,7 +18,7 @@
 <!-- Checkout -->
 <section id="checkout" class="checkout-content">
 	<?php the_content(); ?>
-	<?php do_action( 'ipress_cart' ); ?>
+	<?php do_action( 'ipress_checkout' ); ?>
 </section> <!-- #checkout / .checkout-content -->
 
 <?php do_action( 'ipress_checkout_after' );

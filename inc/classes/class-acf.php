@@ -18,7 +18,9 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 	 */
 	final class IPR_ACF {
 		
-		// Class Constructor
+		/**
+		 * Class constructor
+		 */
 		public function __construct() {
 
 			// Add the theme options page
@@ -59,26 +61,25 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 			if ( ! $this->admin_acf_active() ) { return; }
 
 			// Check Options Page OK        
-			if ( ! function_exists('acf_add_options_page') ) { return; }
+			if ( ! function_exists( 'acf_add_options_page' ) ) { return; }
 
 			// Set theme options page title, or turn off
-			$acf_title = apply_filters( 'ipress_acf_title', 'iPress Child' ); 
-			if ( empty( $acf_title ) ) { return; }
+			$ip_acf_title 		= (string) apply_filters( 'ipress_acf_title', 'iPress Child' ); 
+			$ip_acf_capability	= (string) apply_filters( 'ipress_acf_capability', 'manage_options' );
+			if ( empty( $ip_acf_title ) || empty( $ip_acf_capability ) ) { return; }
 
 			// Add Options Page
 			$parent = acf_add_options_page( [  
-				'title'      => $acf_title,
-				'capability' => apply_filters( 'ipress_acf_capability', 'manage_options' )
+				'title'      => sanitize_text_field( $ip_acf_title ),
+				'capability' => sanitize_key( $ip_acf_capability )
 			] ); 
 
 			// Set Options Page Subpages
-			$subpages = apply_filters( 'ipress_acf_pages', [], $parent );
+			$ip_subpages = (array) apply_filters( 'ipress_acf_pages', [], $parent );
 	   
 			// Add Subpages? 
-			if ( $subpages ) {
-				foreach ( $subpages as $k=>$v ) {
-					acf_add_options_sub_page( $v );
-				} 
+			foreach ( $ip_subpages as $k => $v ) {
+				acf_add_options_sub_page( $v );
 			}
 		}
 
@@ -91,11 +92,11 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 		 *
 		 * @return boolean
 		 */
-		protected function admin_acf_active() {
+		private function admin_acf_active() {
 			if ( ! function_exists( 'is_plugin_active' ) ) {
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			}
-			return ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) ? true : false; 
+			return is_plugin_active( 'advanced-custom-fields-pro/acf.php' ); 
 		}
 
 		/**
@@ -103,8 +104,8 @@ if ( ! class_exists( 'IPR_ACF' ) ) :
 		 * 
 		 * @return boolean
 		 */
-		protected function front_acf_active() {
-			return ( class_exists('acf') ) ? true : false;
+		private function front_acf_active() {
+			return class_exists( 'acf' );
 		}
 	}
 

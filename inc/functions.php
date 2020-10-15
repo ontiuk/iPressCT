@@ -4,7 +4,7 @@
  * iPress - WordPress Theme Framework						
  * ==========================================================
  *
- * Theme functions & functionality
+ * Theme functions & functionality.
  * 
  * @package		iPress\Functions
  * @link		http://ipress.uk
@@ -12,14 +12,13 @@
  */
 
 //----------------------------------------------
-//	Theme Functions
-//----------------------------------------------
-
-// Load Woocommerce Functions
-include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/product.php';
-
-//----------------------------------------------
 //	Child Theme Functions
 //----------------------------------------------
+
+// Load template functions
+include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/template.php';
+
+// Load Woocommerce functions
+include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/product.php';
 
 //end

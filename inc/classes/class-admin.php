@@ -20,14 +20,12 @@ if ( ! class_exists( 'IPR_Admin' ) ) :
 
 		/**
 		 * Class constructor
-		 * - set up hooks
 		 */
 		public function __construct() {}
 
 		//----------------------------------------------
 		//	Admin UI Functions
 		//----------------------------------------------
-
 	}
 
 endif;

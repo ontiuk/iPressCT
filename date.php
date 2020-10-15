@@ -18,7 +18,7 @@
 
 <?php do_action( 'ipress_before_main_content' ); ?>
 
-	<main id="main" class="site-main">
+	<main id="main" class="site-content date-page">
 
 	<?php do_action( 'ipress_archive_before' ); ?>
 
@@ -28,21 +28,21 @@
 			<?php the_archive_title( '<h1 class="page-title date-title">', '</h1>' ); ?>
 			<?php the_archive_description( '<div class="archive-description date-archive">', '</div>' ); ?>
 		</header><!-- .page-header -->
-		
+
 		<?php get_template_part( 'templates/archive' ); ?>
 
-	<?php else: ?>
-	
+	<?php else : ?>
+
 		<?php get_template_part( 'templates/global/content', 'none' ); ?>
 
 	<?php endif; ?>
 
 	<?php do_action( 'ipress_archive_after' ); ?>
 
-	</main><!-- #main / .site-main -->
+    </main><!-- #main / .site-content -->
+
+	<?php do_action( 'ipress_sidebar' ); ?>
 
 <?php do_action( 'ipress_after_main_content' ); ?>
-
-<?php do_action( 'ipress_sidebar' ); ?>
 
 <?php get_footer();

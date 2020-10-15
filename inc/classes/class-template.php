@@ -22,14 +22,12 @@ if ( ! class_exists( 'IPR_Template' ) ) :
 
 		/**
 		 * Class constructor
-		 * - set up hooks
 		 */
 		public function __construct() {}
 
 		//---------------------------------------------
 		// Theme Template Functionality  
 		//---------------------------------------------
-
 	}
 
 endif;

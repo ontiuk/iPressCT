@@ -23,26 +23,17 @@ if ( ! class_exists( 'IPR_Ajax' ) ) :
 		 */
 		public function __construct() {
 
-			// Initialize Ajax functionality
-			$this->init();
+			/**
+			 * Initialise Ajax hooks
+			 * 
+			 * - wp_ajax_xxx 
+			 * - wp_ajax_nopriv_xxx
+			 */
 		}
-
-		//----------------------------------------------
-		//	Ajax Actions
-		//----------------------------------------------
-
-		/**
-		 * Initialise Ajax hooks
-		 * 
-		 * - wp_ajax_xxx 
-		 * - wp_ajax_nopriv_xxx
-		 */
-		public function init() {}
 			
 		//----------------------------------------------
 		//	Ajax Functionality
 		//----------------------------------------------
-
 	}
 
 endif;

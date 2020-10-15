@@ -22,24 +22,19 @@ if ( ! class_exists( 'IPR_API' ) ) :
 		 * Class constructor
 		 */
 		public function __construct() {
-			
-			// Set up new REST endpoints 
-			$this->init();
+
+			//	REST API Endpoints
+			add_action( 'rest_api_init', [ $this, 'register_rest_route' ] );
 		}
-
-		//----------------------------------------------
-		//	REST API Endpoints
-		//----------------------------------------------
-
-		/**
-		 * Set up theme specific REST endpoints
-		 */
-		public function init() {}
 
 		//----------------------------------------------
 		//	REST API Functionality
 		//----------------------------------------------
 
+		/**
+		 * Register rest routes
+		 */			
+		public function register_rest_route() {}
 	}
 
 endif;

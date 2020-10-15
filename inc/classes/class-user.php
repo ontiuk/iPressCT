@@ -21,25 +21,11 @@ if ( ! class_exists( 'IPR_User' ) ) :
 		/**
 		 * Class constructor
 		 */
-		public function __construct() {
-			
-			// Initialize User functionality
-			$this->init();
-		}
-
-		//----------------------------------------------
-		//	User Actions & Filters
-		//----------------------------------------------
-
-		/**
-		 * Initialise User hooks
-		 */
-		public function init() {}
+		public function __construct() {}
 
 		//----------------------------------------------
 		//	User Functionality 
 		//----------------------------------------------
-
 	}
 
 endif;

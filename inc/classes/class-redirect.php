@@ -20,14 +20,12 @@ if ( ! class_exists( 'IPR_Redirect' ) ) :
 
 		/**
 		 * Class constructor
-		 * - set up hooks
 		 */
 		public function __construct() {}
 
 		//----------------------------------------------
 		//	Redirect Functionality
 		//----------------------------------------------
-			
 	}
 
 endif;

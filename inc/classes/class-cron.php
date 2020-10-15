@@ -21,20 +21,7 @@ if ( ! class_exists( 'IPR_Cron' ) ) :
 		/**
 		 * Class constructor
 		 */
-		public function __construct() {
-
-			// Initialize cron functionality
-			$this->init();
-		}
-
-		//----------------------------------------------
-		//	Cron Actions
-		//----------------------------------------------
-
-		/**
-		 * Initialise Cron hooks
-		 */
-		public function init() {}
+		public function __construct() {}
 			
 		//----------------------------------------------
 		//	Cron Functionality

@@ -14,13 +14,25 @@
 
 <?php defined( 'ABSPATH' ) || exit; ?>
 
+<?php 
+// Check breadcrumbs
+$breadcrumb_count = count( $breadcrumb ); 
+if ( ! $breadcrumb_count ) { return; }
+?>
 <!-- Breadcrumbs-->
 <section class="header-breadcrumb single-product-breadcrumb">
     <div class="container">
+	<?php echo $wrap_before; ?>
 	   <ul class="breadcrumb">
-			<li class="breadcrumb-item"><a href="<?= esc_url( home_url( '/' ) ); ?>"><?= __( 'Home', 'ipress-child' ); ?></a></li>
-			<li class="breadcrumb-item"><a href="<?= esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>"><?= __( 'Products', 'ipress-child' ); ?></a></li>
-			<li class="breadcrumb-item active"><?php woocommerce_page_title(); ?></li>
+			<li class="breadcrumb-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'ipress-child' ); ?></a></li>
+		<?php foreach ( $breadcrumb as $key => $crumb ) : ?>
+			<?php if ( ! empty( $crumb[1] ) && $breadcrumb_count > ( $key + 1 ) ) : ?>
+			<li class="breadcrumb-item"><a href="<?php echo esc_url( $crumb[1] ); ?>"><?php echo esc_html( $crumb[0] ); ?></a></li>
+			<?php else : ?>
+			<li class="breadcrumb-item active"><?php echo $crumb[0] ?></li>
+			<?php endif; ?>
+		<?php endforeach; ?>
 		</ul>
-    </div>
+	<?php echo $wrap_after; ?>
+ </div>
 </section>
