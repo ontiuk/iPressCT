@@ -1,24 +1,21 @@
-<?php 
+<?php
 
 /**
- * iPress - WordPress Theme Framework						
+ * iPress - WordPress Theme Framework
  * ==========================================================
  *
  * Theme functions & functionality.
- * 
- * @package		iPress\Functions
- * @link		http://ipress.uk
- * @license		GPL-2.0+
+ *
+ * @package iPress\Functions
+ * @link    http://ipress.uk
+ * @license GPL-2.0+
  */
-
-//----------------------------------------------
-//	Child Theme Functions
-//----------------------------------------------
 
 // Load template functions
 include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/template.php';
 
-// Load Woocommerce functions
+// Load WooCommerce functions
 include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/product.php';
 
-//end
+// Load Advanced Custom Fields functions
+include_once IPRESS_CHILD_INCLUDES_DIR . '/functions/acf.php';

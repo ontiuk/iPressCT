@@ -1,20 +1,22 @@
 <?php
 
 /**
- * iPress - WordPress Theme Framework						
+ * iPress - WordPress Theme Framework
  * ==========================================================
  *
  * Advanced Custom Fields meta data i18n extract
- * 
- * @package		iPress\Config
- * @link		http://ipress.uk
- * @license		GPL-2.0+
+ *
+ * @package iPress\Config
+ * @link    http://ipress.uk
+ * @license GPL-2.0+
  */
 
+// phpcs:disable
+
 //----------------------------------------------
-//	ACF Meta Data: Sample Section
-//	- Create in ACF UI and export
-//	- Replace translation strings if needed
+// ACF Meta Data: Sample Section
+// - Create in ACF UI and export
+// - Replace translation strings if needed
 //----------------------------------------------
 
 // Meta: Brands Section
@@ -47,7 +49,7 @@ acf_add_local_field_group( array(
 			array(
 				'param' 	=> 'options_page',
 				'operator' 	=> '==',
-				'value' 	=> 'ipress-child-sample',
+				'value' 	=> 'ipress-child',
 			),
 		),
 	),
@@ -60,5 +62,3 @@ acf_add_local_field_group( array(
 	'active' 				=> true,
 	'description' 			=> '',
 ));
-
-// end
