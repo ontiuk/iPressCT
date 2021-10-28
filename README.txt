@@ -81,12 +81,10 @@ GNU General Public License for more details.
 |-archive.php
 |-attachment.php
 |-author.php
-|-browserconfig.xml
 |-category.php
 |-CHANGELOG.md
 |-comments.php
 |-date.php
-|-favicon.ico
 |-footer.php
 |-front-page.php
 |-functions.php
