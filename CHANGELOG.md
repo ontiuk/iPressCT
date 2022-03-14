@@ -29,4 +29,11 @@
 * (21 August 2021)		2.0.3 	Various optimisations and tidying-up. Refresh translations
 * (31 August 2021)		2.0.4 	Theme review updates
 * (17 September 2021)	2.1.0 	Class name changes & core phpcs tidyup
-* (28 October 2021)		2.1.1 	Add WooCommerce pages function
+* (16 November 2021)	2.1.1 	Add gallery styles to head cleanup
+* (17 November 2021)	2.1.2 	Refactor WooCommerce css functionality
+* (25 November 2021)	2.1.3 	Refactor WooCommerce class functionality
+* (29 November 2021)	2.1.4 	Add WooCommerce REST API Class
+* (07 December 2021)	2.1.5 	Add WooCommerce endpoint function
+* (08 December 2021)	2.1.6	Refactor WooCommerce setup
+* (13 December 2021)	2.1.7	Refactor WooCommerce breadcrumbs
+* (09 March 2022)		2.2.0	Refactor Main & WooCommerce theme styles & templates

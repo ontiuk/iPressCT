@@ -147,6 +147,7 @@ add_filter( 'ipress_scripts', function( $scripts ) {
 
 		// Theme scripts
 		'custom' => [
+			'navigation' => [ IPRESS_CHILD_JS_URL . '/navigation' . $ip_suffix . '.js', [], $ipress_version ],
 			'theme' => [ IPRESS_CHILD_JS_URL . '/theme' . $ip_suffix . '.js', [ 'jquery' ], $ipress_version ],
 		],
 
@@ -163,6 +164,11 @@ add_filter( 'ipress_scripts', function( $scripts ) {
 		]
 	];
 
+	// WooCommerce? Store page scripts: [ 'label' => [ 'template', 'path_url', (array)dependencies, 'version', 'locale' ] ... ];
+	if ( ipress_wc_active() ) {
+		$ip_scripts['store'] = [];
+	}
+
 	return ( empty( $scripts ) ) ? $ip_scripts : array_merge( $scripts, $ip_scripts );
 } );
 
@@ -178,9 +184,16 @@ add_filter( 'ipress_styles', function( $styles ) {
 	$ip_styles = [
 		'theme' => [
 			'reboot' => [ IPRESS_CHILD_CSS_URL . '/reboot' . $ip_suffix . '.css', [], '5.0.2' ],
-			'theme'  => [ IPRESS_CHILD_URL . '/style.css', [ 'reboot' ], $ipress_version ]
+			'ipress'  => [ IPRESS_CHILD_URL . '/style.css', [ 'reboot' ], $ipress_version ]
 		]
 	];
+
+	// WooCommerce? // Store page styles: [ 'label' => [ 'template', 'path_url', (array)dependencies, 'version', 'locale' ] ... ];
+	if ( ipress_wc_active() ) {
+		$ip_styles['store'] = [
+			'ipress-woocommerce' => [ 'all', IPRESS_CHILD_CSS_URL . '/woocommerce/woocommerce' . $ip_suffix . '.css', [], $ipress_version ],
+		];
+	}
 
 	return ( empty ( $styles ) ) ? $ip_styles : array_merge( $styles, $ip_styles );
 } );

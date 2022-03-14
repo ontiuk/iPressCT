@@ -11,6 +11,9 @@
  * @license GPL-2.0+
  */
 
+// Deny unauthorised access
+defined( 'ABSPATH' ) ||	exit;
+
 if ( ! class_exists( 'IPR_Settings' ) ) :
 
 	/**
@@ -99,7 +102,27 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 				]
 			);
 
-			// Plugabble registrations - pass customizer manager object to child theme settings filter
+			// Add "display_title_and_tagline" setting for displaying the site-title & tagline.
+			$wp_customize->add_setting(
+				'ipress_title_and_tagline',
+				[
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => [ $this, 'sanitize_checkbox' ],			
+				]
+			);
+
+			// Add control for the "display_title_and_tagline" setting.
+			$wp_customize->add_control(
+				'ipress_title_and_tagline',
+				[
+					'type'    => 'checkbox',
+					'section' => 'title_tagline',
+					'label'   => esc_html__( 'Display Site Title & Tagline', 'ipress-child' ),
+				]
+			);
+
+			// Plugable registrations - pass customizer manager object to child theme settings filter
 			do_action( 'ipress_parent_customize_register', $wp_customize );
 		}
 
@@ -311,7 +334,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 			// Theme settings
 			// ----------------------------------------------
 
-			// Pluggable registrations - pass customizer manager object to child theme settings filter
+			// Plugable registrations - pass customizer manager object to child theme settings filter
 			do_action( 'ipress_customize_register_theme', $wp_customize );
 		}
 
@@ -496,8 +519,8 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 					'transport'         => $transport,
 					'type'              => 'theme_mod',
 					'capability'        => 'edit_theme_options',
-					'default'           => IPRESS_CHILD_IMAGES_URL . '/hero-image.svg',
-					'sanitize_callback' => 'esc_url_raw',
+					'default'           => IPRESS_CHILD_IMAGES_URL . '/hero.svg',
+					'sanitize_callback' => [ $this, 'sanitize_image' ],
 				]
 			);
 
@@ -511,9 +534,9 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 						'description' => esc_html__( 'Add the hero section background image', 'ipress-child' ),
 						'section'     => 'ipress_hero',
 						'context'     => 'hero-image',
-						'flex_width'  => false,
+						'flex_width'  => true,
 						'flex_height' => true,
-						'width'       => 1080,
+						'width'       => 1240,
 						'height'      => 480,
 						'priority'    => 18,
 					]
@@ -567,6 +590,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 					'description' => esc_html__( 'Display an overlay with opacity on the hero image.', 'ipress-child' ),
 					'section'     => 'ipress_hero',
 					'settings'    => 'ipress_hero_overlay',
+					'type'		  => 'checkbox',
 					'priority'    => 22,
 				]
 			);
@@ -636,7 +660,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 				]
 			);
 
-			// Pluggable registrations - pass customizer manager object to child theme settings filter
+			// Plugable registrations - pass customizer manager object to child theme settings filter
 			do_action( 'ipress_customize_register_hero', $wp_customize );
 		}
 
@@ -734,7 +758,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 				);
 			}
 
-			// Pluggable registrations - pass customizer manager object to child theme settings filter
+			// Plugable registrations - pass customizer manager object to child theme settings filter
 			do_action( 'ipress_customize_register_partials', $wp_customize );
 		}
 
@@ -766,9 +790,9 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 		/**
 		 * Sanitize select
 		 *
-		 * @param string $input The input from the setting.
-		 * @param object $setting The selected setting.
-		 * @return string $input|$setting->default The input from the setting or the default setting.
+		 * @param string $input The input from the setting
+		 * @param object $setting The selected setting
+		 * @return string $input|$setting->default The input from the setting or the default setting
 		 */
 		public function sanitize_select( $input, $setting ) {
 			$input   = sanitize_key( $input );
@@ -779,11 +803,22 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 		/**
 		 * Sanitize boolean for checkbox
 		 *
-		 * @param bool $checked Whether or not a box is checked.
+		 * @param bool $checked Whether or not a box is checked
 		 * @return bool
 		 */
 		public function sanitize_checkbox( $checked ) {
 			return ( isset( $checked ) && true === $checked );
+		}
+
+		/**
+		 * Sanitize integer for image ID
+		 *
+		 * @param integer $image
+		 * @param object $setting The selected setting
+		 * @return integer
+		 */
+		public function sanitize_image( $image, $setting ) {
+			return intval( $image );
 		}
 
 		//----------------------------------------------
@@ -818,7 +853,8 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 		public static function hero_image() {
 
 			// Get hero image if set
-			$ip_hero_image_id = get_theme_mod( 'ipress_hero_image' );
+			$ip_hero_image_id = (int) get_theme_mod( 'ipress_hero_image' );
+
 			if ( $ip_hero_image_id > 0 ) {
 
 				// Hero image details
@@ -828,12 +864,16 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 				// Reconstruct image params
 				list( $hero_image_src, $hero_image_width, $hero_image_height ) = $hero_image;
 
+				// Set hero image class
+				$ip_hero_image_class = apply_filters( 'ipress_hero_image_class', '' );
+
 				// Set hero image
 				$hero_image_hw = image_hwstring( $hero_image_width, $hero_image_height );
-				return sprintf( '<img class="%1$s" src="%2$s" %3$s alt="%4$s" />', 'bg-img img-fluid', $hero_image_src, trim( $hero_image_hw ), $hero_image_alt );
+
+				return sprintf( '<img class="%1$s" src="%2$s" %3$s alt="%4$s" />', $ip_hero_image_class, $hero_image_src, trim( $hero_image_hw ), $hero_image_alt );
 			}
 
-			return '';
+			return false;
 		}
 
 		/**

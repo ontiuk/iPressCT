@@ -116,6 +116,8 @@ GNU General Public License for more details.
 |		|-/woocommerce
 |			|-woocommerce.css
 |			|-woocommerce.min.css
+| 			|-/scss
+| 				|-various dummy folders and example woocommerce.scss
 | 	|-/fonts
 | 	|-/images
 | 		|-various folders and example images

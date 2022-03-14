@@ -11,11 +11,27 @@ small {
 }
 
 a {
-    color: $link-color;
-    text-decoration: $link-decoration;
-    @include hover-focus {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
-    }
-    transition: all 0.3s;
+    color: $color__link;
+	text-decoration: var(--link-decoration);
+    transition: var(--link-transition);
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: var(--link-decoration-hover);
+   		filter: brightness(var(--color-filter-hover-dark)) saturate(var(--color-filter-hover-saturate));
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: none;
+	}
 }
