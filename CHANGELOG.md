@@ -37,3 +37,4 @@
 * (08 December 2021)	2.1.6	Refactor WooCommerce setup
 * (13 December 2021)	2.1.7	Refactor WooCommerce breadcrumbs
 * (09 March 2022)		2.2.0	Refactor Main & WooCommerce theme styles & templates
+* (15 March 2022)		2.2.1	Update front page Hero settings & templates

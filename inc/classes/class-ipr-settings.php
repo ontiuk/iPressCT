@@ -387,6 +387,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 					'description' => esc_html__( 'Display or hide the front page hero section.', 'ipress-child' ),
 					'type'        => 'checkbox',
 					'section'     => 'ipress_theme',
+					'settings'    => 'ipress_hero',					
 					'priority'    => 10,
 				]
 			);
@@ -481,8 +482,8 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 					'label'       => __( 'Button Page Link', 'ipress-child' ),
 					'description' => esc_html__( 'Link to page via button', 'ipress-child' ),
 					'section'     => 'ipress_hero',
-					'type'        => 'dropdown-pages',
 					'settings'    => 'ipress_hero_button_link',
+					'type'        => 'dropdown-pages',
 					'priority'    => 14,
 				]
 			);
@@ -533,6 +534,7 @@ if ( ! class_exists( 'IPR_Settings' ) ) :
 						'label'       => __( 'Hero Image', 'ipress-child' ),
 						'description' => esc_html__( 'Add the hero section background image', 'ipress-child' ),
 						'section'     => 'ipress_hero',
+						'settings'    => 'ipress_hero_image',
 						'context'     => 'hero-image',
 						'flex_width'  => true,
 						'flex_height' => true,
