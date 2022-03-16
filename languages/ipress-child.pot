@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 23:00+0000\n"
-"PO-Revision-Date: 2022-03-09 23:00+0\n"
+"POT-Creation-Date: 2022-03-16 11:19+0000\n"
+"PO-Revision-Date: 2022-03-16 11:19+0\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -251,88 +251,88 @@ msgstr ""
 msgid "Display or hide the front page hero section."
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:431
+#: inc/classes/class-ipr-settings.php:432
 msgid "Hero Title"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:432
+#: inc/classes/class-ipr-settings.php:433
 msgid "Modify the front page hero section title"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:456
+#: inc/classes/class-ipr-settings.php:457
 msgid "Hero Description"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:457
+#: inc/classes/class-ipr-settings.php:458
 msgid "Modify the front page hero section description"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:481
+#: inc/classes/class-ipr-settings.php:482
 msgid "Button Page Link"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:482
+#: inc/classes/class-ipr-settings.php:483
 msgid "Link to page via button"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:497 templates/front/hero.php:28
-#: templates/front/hero_2.php:30
+#: inc/classes/class-ipr-settings.php:498 templates/front/hero.php:28
+#: templates/front/hero_2.php:28
 msgid "Learn More"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:506
+#: inc/classes/class-ipr-settings.php:507
 msgid "Hero Button Text"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:507
+#: inc/classes/class-ipr-settings.php:508
 msgid "Hero button text"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:533
+#: inc/classes/class-ipr-settings.php:534
 msgid "Hero Image"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:534
+#: inc/classes/class-ipr-settings.php:535
 msgid "Add the hero section background image"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:564
+#: inc/classes/class-ipr-settings.php:566
 msgid "Hero Background Color"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:565
+#: inc/classes/class-ipr-settings.php:567
 msgid "Hero background color"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:589
+#: inc/classes/class-ipr-settings.php:591
 msgid "Hero Overlay"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:590
+#: inc/classes/class-ipr-settings.php:592
 msgid "Display an overlay with opacity on the hero image."
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:616
+#: inc/classes/class-ipr-settings.php:618
 msgid "Hero Overlay Color"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:617
+#: inc/classes/class-ipr-settings.php:619
 msgid "Hero overlay color"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:637
+#: inc/classes/class-ipr-settings.php:639
 msgid "Value must be between 0 and 100"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:648
+#: inc/classes/class-ipr-settings.php:650
 msgid "Hero Overlay Opacity"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:649
+#: inc/classes/class-ipr-settings.php:651
 msgid "Hero overlay opacity"
 msgstr ""
 
-#: inc/classes/class-ipr-settings.php:839
+#: inc/classes/class-ipr-settings.php:841
 msgid "Comma separated list of category IDs only."
 msgstr ""
 
@@ -359,6 +359,22 @@ msgstr ""
 #: inc/functions/product.php:79
 #, php-format
 msgid "Theme Requires WooCommerce %1$s. Version %2$s installed"
+msgstr ""
+
+#: inc/lib/acf-config.php:38
+msgid "WooCommerce Shop Page"
+msgstr ""
+
+#: inc/lib/acf-config.php:39
+msgid "WooCommerce Cart Page"
+msgstr ""
+
+#: inc/lib/acf-config.php:40
+msgid "WooCommerce Checkout Page"
+msgstr ""
+
+#: inc/lib/acf-config.php:41
+msgid "WooCommerce Account Page"
 msgstr ""
 
 #: inc/lib/acf/sample.php:25

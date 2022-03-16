@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 23:00+0000\n"
-"PO-Revision-Date: 2022-03-09 23:12+0000\n"
+"POT-Creation-Date: 2022-03-16 11:19+0000\n"
+"PO-Revision-Date: 2022-03-16 11:31+0000\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -269,88 +269,88 @@ msgstr "Zone de héros de la première page"
 msgid "Display or hide the front page hero section."
 msgstr "Affichez ou masquez la section héros de la première page."
 
-#: inc/classes/class-ipr-settings.php:431
+#: inc/classes/class-ipr-settings.php:432
 msgid "Hero Title"
 msgstr "Titre du héros"
 
-#: inc/classes/class-ipr-settings.php:432
+#: inc/classes/class-ipr-settings.php:433
 msgid "Modify the front page hero section title"
 msgstr "Modifier le titre de la section héros de la première page"
 
-#: inc/classes/class-ipr-settings.php:456
+#: inc/classes/class-ipr-settings.php:457
 msgid "Hero Description"
 msgstr "Description du héros"
 
-#: inc/classes/class-ipr-settings.php:457
+#: inc/classes/class-ipr-settings.php:458
 msgid "Modify the front page hero section description"
 msgstr "Modifier la description de la section héros de la première page"
 
-#: inc/classes/class-ipr-settings.php:481
+#: inc/classes/class-ipr-settings.php:482
 msgid "Button Page Link"
 msgstr "Lien vers la page du bouton"
 
-#: inc/classes/class-ipr-settings.php:482
+#: inc/classes/class-ipr-settings.php:483
 msgid "Link to page via button"
 msgstr "Lien vers la page via le bouton"
 
-#: inc/classes/class-ipr-settings.php:497 templates/front/hero.php:28
-#: templates/front/hero_2.php:30
+#: inc/classes/class-ipr-settings.php:498 templates/front/hero.php:28
+#: templates/front/hero_2.php:28
 msgid "Learn More"
 msgstr "En savoir plus"
 
-#: inc/classes/class-ipr-settings.php:506
+#: inc/classes/class-ipr-settings.php:507
 msgid "Hero Button Text"
 msgstr "Texte du bouton héros"
 
-#: inc/classes/class-ipr-settings.php:507
+#: inc/classes/class-ipr-settings.php:508
 msgid "Hero button text"
 msgstr "Texte du bouton héros"
 
-#: inc/classes/class-ipr-settings.php:533
+#: inc/classes/class-ipr-settings.php:534
 msgid "Hero Image"
 msgstr "Image du héros"
 
-#: inc/classes/class-ipr-settings.php:534
+#: inc/classes/class-ipr-settings.php:535
 msgid "Add the hero section background image"
 msgstr "Ajouter l'image d'arrière-plan de la section des héros"
 
-#: inc/classes/class-ipr-settings.php:564
+#: inc/classes/class-ipr-settings.php:566
 msgid "Hero Background Color"
 msgstr "Couleur de fond du héros"
 
-#: inc/classes/class-ipr-settings.php:565
+#: inc/classes/class-ipr-settings.php:567
 msgid "Hero background color"
 msgstr "Couleur de fond du héros"
 
-#: inc/classes/class-ipr-settings.php:589
+#: inc/classes/class-ipr-settings.php:591
 msgid "Hero Overlay"
 msgstr "Superposition de héros"
 
-#: inc/classes/class-ipr-settings.php:590
+#: inc/classes/class-ipr-settings.php:592
 msgid "Display an overlay with opacity on the hero image."
 msgstr "Affichez une superposition avec opacité sur l'image du héros."
 
-#: inc/classes/class-ipr-settings.php:616
+#: inc/classes/class-ipr-settings.php:618
 msgid "Hero Overlay Color"
 msgstr "Couleur de superposition de héros"
 
-#: inc/classes/class-ipr-settings.php:617
+#: inc/classes/class-ipr-settings.php:619
 msgid "Hero overlay color"
 msgstr "Couleur de superposition de héros"
 
-#: inc/classes/class-ipr-settings.php:637
+#: inc/classes/class-ipr-settings.php:639
 msgid "Value must be between 0 and 100"
 msgstr "La valeur doit être comprise entre 0 et 100"
 
-#: inc/classes/class-ipr-settings.php:648
+#: inc/classes/class-ipr-settings.php:650
 msgid "Hero Overlay Opacity"
 msgstr "Opacité de superposition de héros"
 
-#: inc/classes/class-ipr-settings.php:649
+#: inc/classes/class-ipr-settings.php:651
 msgid "Hero overlay opacity"
 msgstr "Opacité de superposition de héros"
 
-#: inc/classes/class-ipr-settings.php:839
+#: inc/classes/class-ipr-settings.php:841
 msgid "Comma separated list of category IDs only."
 msgstr "Liste séparée par des virgules des ID de catégorie uniquement."
 
@@ -378,6 +378,22 @@ msgstr "Gros"
 #, php-format
 msgid "Theme Requires WooCommerce %1$s. Version %2$s installed"
 msgstr "Le thème nécessite WooCommerce %1$s. Version %2$s installée"
+
+#: inc/lib/acf-config.php:38
+msgid "WooCommerce Shop Page"
+msgstr "Page de la boutique WooCommerce"
+
+#: inc/lib/acf-config.php:39
+msgid "WooCommerce Cart Page"
+msgstr "Page du panier WooCommerce"
+
+#: inc/lib/acf-config.php:40
+msgid "WooCommerce Checkout Page"
+msgstr "Page de paiement WooCommerce"
+
+#: inc/lib/acf-config.php:41
+msgid "WooCommerce Account Page"
+msgstr "Page de compte WooCommerce"
 
 #: inc/lib/acf/sample.php:25
 msgid "Sample Section"

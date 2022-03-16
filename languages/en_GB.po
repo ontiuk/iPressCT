@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 23:00+0000\n"
-"PO-Revision-Date: 2022-03-09 23:04+0000\n"
+"POT-Creation-Date: 2022-03-16 11:19+0000\n"
+"PO-Revision-Date: 2022-03-16 11:25+0000\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,88 +250,88 @@ msgstr "Front Page Hero Area"
 msgid "Display or hide the front page hero section."
 msgstr "Display or hide the front page hero section."
 
-#: inc/classes/class-ipr-settings.php:431
+#: inc/classes/class-ipr-settings.php:432
 msgid "Hero Title"
 msgstr "Hero Title"
 
-#: inc/classes/class-ipr-settings.php:432
+#: inc/classes/class-ipr-settings.php:433
 msgid "Modify the front page hero section title"
 msgstr "Modify the front page hero section title"
 
-#: inc/classes/class-ipr-settings.php:456
+#: inc/classes/class-ipr-settings.php:457
 msgid "Hero Description"
 msgstr "Hero Description"
 
-#: inc/classes/class-ipr-settings.php:457
+#: inc/classes/class-ipr-settings.php:458
 msgid "Modify the front page hero section description"
 msgstr "Modify the front page hero section description"
 
-#: inc/classes/class-ipr-settings.php:481
+#: inc/classes/class-ipr-settings.php:482
 msgid "Button Page Link"
 msgstr "Button Page Link"
 
-#: inc/classes/class-ipr-settings.php:482
+#: inc/classes/class-ipr-settings.php:483
 msgid "Link to page via button"
 msgstr "Link to page via button"
 
-#: inc/classes/class-ipr-settings.php:497 templates/front/hero.php:28
-#: templates/front/hero_2.php:30
+#: inc/classes/class-ipr-settings.php:498 templates/front/hero.php:28
+#: templates/front/hero_2.php:28
 msgid "Learn More"
 msgstr "Learn More"
 
-#: inc/classes/class-ipr-settings.php:506
+#: inc/classes/class-ipr-settings.php:507
 msgid "Hero Button Text"
 msgstr "Hero Button Text"
 
-#: inc/classes/class-ipr-settings.php:507
+#: inc/classes/class-ipr-settings.php:508
 msgid "Hero button text"
 msgstr "Hero button text"
 
-#: inc/classes/class-ipr-settings.php:533
+#: inc/classes/class-ipr-settings.php:534
 msgid "Hero Image"
 msgstr "Hero Image"
 
-#: inc/classes/class-ipr-settings.php:534
+#: inc/classes/class-ipr-settings.php:535
 msgid "Add the hero section background image"
 msgstr "Add the hero section background image"
 
-#: inc/classes/class-ipr-settings.php:564
+#: inc/classes/class-ipr-settings.php:566
 msgid "Hero Background Color"
 msgstr "Hero Background Color"
 
-#: inc/classes/class-ipr-settings.php:565
+#: inc/classes/class-ipr-settings.php:567
 msgid "Hero background color"
 msgstr "Hero background color"
 
-#: inc/classes/class-ipr-settings.php:589
+#: inc/classes/class-ipr-settings.php:591
 msgid "Hero Overlay"
 msgstr "Hero Overlay"
 
-#: inc/classes/class-ipr-settings.php:590
+#: inc/classes/class-ipr-settings.php:592
 msgid "Display an overlay with opacity on the hero image."
 msgstr "Display an overlay with opacity on the hero image."
 
-#: inc/classes/class-ipr-settings.php:616
+#: inc/classes/class-ipr-settings.php:618
 msgid "Hero Overlay Color"
 msgstr "Hero Overlay Color"
 
-#: inc/classes/class-ipr-settings.php:617
+#: inc/classes/class-ipr-settings.php:619
 msgid "Hero overlay color"
 msgstr "Hero overlay color"
 
-#: inc/classes/class-ipr-settings.php:637
+#: inc/classes/class-ipr-settings.php:639
 msgid "Value must be between 0 and 100"
 msgstr "Value must be between 0 and 100"
 
-#: inc/classes/class-ipr-settings.php:648
+#: inc/classes/class-ipr-settings.php:650
 msgid "Hero Overlay Opacity"
 msgstr "Hero Overlay Opacity"
 
-#: inc/classes/class-ipr-settings.php:649
+#: inc/classes/class-ipr-settings.php:651
 msgid "Hero overlay opacity"
 msgstr "Hero overlay opacity"
 
-#: inc/classes/class-ipr-settings.php:839
+#: inc/classes/class-ipr-settings.php:841
 msgid "Comma separated list of category IDs only."
 msgstr "Comma separated list of category IDs only."
 
@@ -359,6 +359,22 @@ msgstr "Big"
 #, php-format
 msgid "Theme Requires WooCommerce %1$s. Version %2$s installed"
 msgstr "Theme Requires WooCommerce %1$s. Version %2$s installed"
+
+#: inc/lib/acf-config.php:38
+msgid "WooCommerce Shop Page"
+msgstr "WooCommerce Shop Page"
+
+#: inc/lib/acf-config.php:39
+msgid "WooCommerce Cart Page"
+msgstr "WooCommerce Cart Page"
+
+#: inc/lib/acf-config.php:40
+msgid "WooCommerce Checkout Page"
+msgstr "WooCommerce Checkout Page"
+
+#: inc/lib/acf-config.php:41
+msgid "WooCommerce Account Page"
+msgstr "WooCommerce Account Page"
 
 #: inc/lib/acf/sample.php:25
 msgid "Sample Section"

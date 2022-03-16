@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-09 23:00+0000\n"
-"PO-Revision-Date: 2022-03-09 23:17+0000\n"
+"POT-Creation-Date: 2022-03-16 11:19+0000\n"
+"PO-Revision-Date: 2022-03-16 11:37+0000\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -252,88 +252,88 @@ msgstr "Första sidan hjälteområdet"
 msgid "Display or hide the front page hero section."
 msgstr "Visa eller dölj startsidan för hjälte."
 
-#: inc/classes/class-ipr-settings.php:431
+#: inc/classes/class-ipr-settings.php:432
 msgid "Hero Title"
 msgstr "Hjälttitel"
 
-#: inc/classes/class-ipr-settings.php:432
+#: inc/classes/class-ipr-settings.php:433
 msgid "Modify the front page hero section title"
 msgstr "Ändra titeln på hjältesektionen på första sidan"
 
-#: inc/classes/class-ipr-settings.php:456
+#: inc/classes/class-ipr-settings.php:457
 msgid "Hero Description"
 msgstr "Hjälte beskrivning"
 
-#: inc/classes/class-ipr-settings.php:457
+#: inc/classes/class-ipr-settings.php:458
 msgid "Modify the front page hero section description"
 msgstr "Ändra beskrivningen av hjältesektionen på första sidan"
 
-#: inc/classes/class-ipr-settings.php:481
+#: inc/classes/class-ipr-settings.php:482
 msgid "Button Page Link"
 msgstr "Länk till knappsida"
 
-#: inc/classes/class-ipr-settings.php:482
+#: inc/classes/class-ipr-settings.php:483
 msgid "Link to page via button"
 msgstr "Länk till sidan via knappen"
 
-#: inc/classes/class-ipr-settings.php:497 templates/front/hero.php:28
-#: templates/front/hero_2.php:30
+#: inc/classes/class-ipr-settings.php:498 templates/front/hero.php:28
+#: templates/front/hero_2.php:28
 msgid "Learn More"
 msgstr "Lära sig mer"
 
-#: inc/classes/class-ipr-settings.php:506
+#: inc/classes/class-ipr-settings.php:507
 msgid "Hero Button Text"
 msgstr "Hjälteknapptext"
 
-#: inc/classes/class-ipr-settings.php:507
+#: inc/classes/class-ipr-settings.php:508
 msgid "Hero button text"
 msgstr "Hjälteknapptext"
 
-#: inc/classes/class-ipr-settings.php:533
+#: inc/classes/class-ipr-settings.php:534
 msgid "Hero Image"
 msgstr "Hjältebild"
 
-#: inc/classes/class-ipr-settings.php:534
+#: inc/classes/class-ipr-settings.php:535
 msgid "Add the hero section background image"
 msgstr "Lägg till bakgrundsbilden på hjältesektionen"
 
-#: inc/classes/class-ipr-settings.php:564
+#: inc/classes/class-ipr-settings.php:566
 msgid "Hero Background Color"
 msgstr "Hjälta bakgrundsfärg"
 
-#: inc/classes/class-ipr-settings.php:565
+#: inc/classes/class-ipr-settings.php:567
 msgid "Hero background color"
 msgstr "Hjälta bakgrundsfärg"
 
-#: inc/classes/class-ipr-settings.php:589
+#: inc/classes/class-ipr-settings.php:591
 msgid "Hero Overlay"
 msgstr "Hjälten överlägg"
 
-#: inc/classes/class-ipr-settings.php:590
+#: inc/classes/class-ipr-settings.php:592
 msgid "Display an overlay with opacity on the hero image."
 msgstr "Visa en överlägg med opacitet på hjältebilden."
 
-#: inc/classes/class-ipr-settings.php:616
+#: inc/classes/class-ipr-settings.php:618
 msgid "Hero Overlay Color"
 msgstr "Heltoverlay färg"
 
-#: inc/classes/class-ipr-settings.php:617
+#: inc/classes/class-ipr-settings.php:619
 msgid "Hero overlay color"
 msgstr "Heltoverlay färg"
 
-#: inc/classes/class-ipr-settings.php:637
+#: inc/classes/class-ipr-settings.php:639
 msgid "Value must be between 0 and 100"
 msgstr "Värdet måste vara mellan 0 och 100"
 
-#: inc/classes/class-ipr-settings.php:648
+#: inc/classes/class-ipr-settings.php:650
 msgid "Hero Overlay Opacity"
 msgstr "Heltöverdragsopacitet"
 
-#: inc/classes/class-ipr-settings.php:649
+#: inc/classes/class-ipr-settings.php:651
 msgid "Hero overlay opacity"
 msgstr "Heltöverdragsopacitet"
 
-#: inc/classes/class-ipr-settings.php:839
+#: inc/classes/class-ipr-settings.php:841
 msgid "Comma separated list of category IDs only."
 msgstr "Kommaseparerad lista med endast kategori-ID."
 
@@ -361,6 +361,22 @@ msgstr "Väldigt stor"
 #, php-format
 msgid "Theme Requires WooCommerce %1$s. Version %2$s installed"
 msgstr "Tema kräver Woocommerce %1$s. Version %2$s installerad"
+
+#: inc/lib/acf-config.php:38
+msgid "WooCommerce Shop Page"
+msgstr "WooCommerce butikssida"
+
+#: inc/lib/acf-config.php:39
+msgid "WooCommerce Cart Page"
+msgstr "WooCommerce kundvagnssida"
+
+#: inc/lib/acf-config.php:40
+msgid "WooCommerce Checkout Page"
+msgstr "WooCommerce kassasida"
+
+#: inc/lib/acf-config.php:41
+msgid "WooCommerce Account Page"
+msgstr "WooCommerce-kontosida"
 
 #: inc/lib/acf/sample.php:25
 msgid "Sample Section"
