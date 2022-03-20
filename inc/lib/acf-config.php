@@ -20,7 +20,7 @@
 
 // Set ACF options page title
 add_filter( 'ipress_acf_title', function( $title ) {
-	return 'iPress-Child';
+	return IPRESS_CHILD_THEME_NAME;
 } );
 
 // Set ACF options page subpages
@@ -99,7 +99,7 @@ add_filter('acf/settings/l10n', function( $localization ) {
 
 // Set up translation text domain
 add_filter('acf/settings/l10n_textdomain', function( $domain ) {
-	return 'ipress-child';
+	return IPRESS_CHILD_TEXT_DOMAIN;
 } );
 
 //----------------------------------------------

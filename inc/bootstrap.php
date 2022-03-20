@@ -21,8 +21,9 @@ do_action( 'ipress_child_bootstrap' );
 //----------------------------------------------
 
 // Theme Name & Versioning: Change as required.
-define( 'IPRESS_CHILD_THEME_NAME', 'iPress Child' );
-define( 'IPRESS_CHILD_THEME_WC',   6.0 ); // WooCommerce minimum version required.
+define( 'IPRESS_CHILD_THEME_NAME', 	'iPress Child' );
+define( 'IPRESS_CHILD_TEXT_DOMAIN', 'ipress-child' );
+define( 'IPRESS_CHILD_THEME_WC',   	6.0 ); // WooCommerce minimum version required.
 
 // Directory Structure
 define( 'IPRESS_CHILD_DIR',           get_theme_file_path() );
@@ -66,7 +67,7 @@ define( 'IPRESS_CHILD_LIB_URL',       IPRESS_CHILD_INCLUDES_URL . '/lib' );
 
 // Theme localization i18n - loads wp-content/themes/child-theme-name/languages/xx_XX.mo.
 add_action( 'after_setup_theme', function() {
-	load_child_theme_textdomain( IPRESS_CHILD_THEME_NAME, get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'ipress-child', get_stylesheet_directory() . '/languages' );
 }, 8 );
 
 //------------------------------------------------------
