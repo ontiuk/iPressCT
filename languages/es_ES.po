@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 11:19+0000\n"
-"PO-Revision-Date: 2022-03-16 11:28+0000\n"
+"POT-Creation-Date: 2022-03-20 16:58+0000\n"
+"PO-Revision-Date: 2022-03-20 17:03+0000\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,54 +109,86 @@ msgstr "Etiqueta: %s"
 msgid "Taxonomy: %1$s: %2$s"
 msgstr "Taxonomía: %1$s: %2$s"
 
-#: inc/config.php:306
+#: inc/config.php:240
+msgid "Primary Menu"
+msgstr "Menú Primaria"
+
+#: inc/config.php:256
+msgid "Image in Post"
+msgstr "Imagen en la publicación"
+
+#: inc/config.php:257
+msgid "Original size"
+msgstr "Tamaño original"
+
+#: inc/config.php:269
+msgid "Primary Sidebar"
+msgstr "Barra lateral primaria"
+
+#: inc/config.php:270
+msgid "This is the primary sidebar."
+msgstr "Esta es la barra lateral principal."
+
+#: inc/config.php:274
+msgid "Header Sidebar"
+msgstr "Barra lateral del encabezado"
+
+#: inc/config.php:275
+msgid "This is the header sidebar."
+msgstr "Esta es la barra lateral del encabezado."
+
+#: inc/config.php:336
 msgid "Shop Page Sidebar"
 msgstr "Barra lateral de la página de la tienda"
 
-#: inc/config.php:307
+#: inc/config.php:337
 msgid "This is the shop page sidebar for all layouts."
 msgstr ""
 "Esta es la barra lateral de la página de la tienda para todos los diseños."
 
-#: inc/config.php:310
+#: inc/config.php:341
 msgid "Shop Product Page Sidebar"
 msgstr "Barra lateral de la página de productos de la tienda"
 
-#: inc/config.php:311
+#: inc/config.php:342
 msgid "This is the shop product page sidebar for all layouts."
 msgstr ""
 "Esta es la barra lateral de la página de productos de la tienda para todos "
 "los diseños."
 
-#: inc/config.php:314
+#: inc/config.php:346
 msgid "Shop Category Page Sidebar"
 msgstr "Barra lateral de la página de categoría de la tienda"
 
-#: inc/config.php:315
+#: inc/config.php:347
 msgid "This is the shop category page sidebar for all layouts."
 msgstr ""
 "Esta es la barra lateral de la página de categoría de la tienda para todos "
 "los diseños."
 
-#: inc/config.php:318
+#: inc/config.php:351
 msgid "Shop Cart & Checkout Page Sidebar"
 msgstr "Carrito de la compra y barra lateral de la página de pago"
 
-#: inc/config.php:319
+#: inc/config.php:352
 msgid "This is the shop cart & checkout page sidebar for all layouts."
 msgstr ""
 "Esta es la barra lateral de la página de la cuenta de la tienda para todos "
 "los diseños."
 
-#: inc/config.php:322
+#: inc/config.php:356
 msgid "Shop Account Page Sidebar"
 msgstr "Barra lateral de la página de cuenta de la tienda"
 
-#: inc/config.php:323
+#: inc/config.php:357
 msgid "This is the shop account page sidebar for all layouts."
 msgstr ""
 "Esta es la barra lateral de la página de la cuenta de la tienda para todos "
 "los diseños."
+
+#: inc/config.php:365 inc/config.php:370
+msgid "my-account"
+msgstr "mi-cuenta"
 
 #: inc/template-functions.php:339
 msgctxt "Next post"
@@ -167,6 +199,10 @@ msgstr "Próximo"
 msgctxt "Previous post"
 msgid "Previous"
 msgstr "Anterior"
+
+#: inc/classes/class-ipr-hooks.php:63
+msgid "Admin Phone No."
+msgstr "Número de teléfono del administrador"
 
 #: inc/classes/class-ipr-settings.php:76
 msgid "Background"
@@ -433,38 +469,38 @@ msgstr "Búsqueda de Producto"
 msgid "Displays header product search box."
 msgstr "Muestra el cuadro de búsqueda de productos del encabezado."
 
-#: inc/woocommerce/class-ipr-woocommerce.php:656
+#: inc/woocommerce/class-ipr-woocommerce.php:654
 msgid "Add to basket"
 msgstr "Añadir al carrito"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:656
-#: inc/woocommerce/class-ipr-woocommerce.php:660
-#: inc/woocommerce/class-ipr-woocommerce.php:669
+#: inc/woocommerce/class-ipr-woocommerce.php:654
+#: inc/woocommerce/class-ipr-woocommerce.php:658
+#: inc/woocommerce/class-ipr-woocommerce.php:667
 msgid "Read more"
 msgstr "Lee mas"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:660
+#: inc/woocommerce/class-ipr-woocommerce.php:658
 msgid "Select options"
 msgstr "Seleccione opciones"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:663
+#: inc/woocommerce/class-ipr-woocommerce.php:661
 msgid "View products"
 msgstr "Ver productos"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:666
+#: inc/woocommerce/class-ipr-woocommerce.php:664
 msgctxt "placeholder"
 msgid "Buy product"
 msgstr "Comprar producto"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:878
+#: inc/woocommerce/class-ipr-woocommerce.php:876
 msgid "Random"
 msgstr "Aleatorio"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:995
+#: inc/woocommerce/class-ipr-woocommerce.php:993
 msgid "Orders"
 msgstr "Pedidos"
 
-#: inc/woocommerce/class-ipr-woocommerce.php:996
+#: inc/woocommerce/class-ipr-woocommerce.php:994
 msgid "Total Spent"
 msgstr "Total Gastado"
 
