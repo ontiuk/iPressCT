@@ -148,7 +148,7 @@ add_filter( 'ipress_scripts', function() use( $ip_suffix ) {
 
 		// Theme scripts
 		'custom' => [
-			'navigation' => [ IPRESS_CHILD_JS_URL . '/navigation' . $ip_suffix . '.js', [], $ipress_version ],
+			'navigation' => [ IPRESS_CHILD_JS_URL . '/navigation' . $ip_suffix . '.js', [ 'theme' ], $ipress_version ],
 			'theme' => [ IPRESS_CHILD_JS_URL . '/theme' . $ip_suffix . '.js', [ 'jquery' ], $ipress_version ],
 		],
 
@@ -192,13 +192,13 @@ add_filter( 'ipress_fonts', function() {
 //
 // $post_types = [
 //   'cpt' => [
-//     'name'        => _x( 'CPT', 'Post Type Singular Name', 'ipress-child' ),
-//     'plural'      => _x( 'CPTs', 'Post Type General Name', 'ipress-child' ),
-//     'public'      => false,
-//     'description' => __( 'This is the CPT post type', 'ipress-child' ),
-//     'supports'    => [ 'title', 'editor', 'thumbnail' ],
-//     'taxonomies'  => [ 'post_tag', 'category' ],
-//     'args'        => [
+//     'singular' => _x( 'CPT', 'Post Type Singular Name', 'ipress' ),
+//     'plural' => _x( 'CPTs', 'Post Type General Name', 'ipress' ),
+//     'args' => [
+//       'public'       => false,
+//       'description'  => __( 'This is the CPT post type', 'ipress' ),
+//       'supports'     => [ 'title', 'editor', 'thumbnail' ],
+//       'taxonomies'   => [ 'post_tag', 'category' ],
 //       'has_archive'  => true,
 //       'show_in_rest' => true
 //     ],
@@ -207,15 +207,16 @@ add_filter( 'ipress_fonts', function() {
 //
 // $taxonomies = [
 //   'cpt_tax' => [
-//     'name'        => _x( 'Taxonomy Name', 'Taxonomy Singular Name', 'ipress-child' ),
-//     'plural'      => _x( 'Taxonomies Name', 'Taxonomy General Name', 'ipress-child' ),
-//     'public'      => false,
-//     'description' => __( 'This is the Taxonomy name', 'ipress-child' ),
-//     'post_types'  => [ 'cpt' ],
-//     'args'        => [],
-//     'column'      => true, //optional
-//     'sortable'    => true, //optional
-//     'filter'      => true  //optional
+//     'singular' => _x( 'Taxonomy Name', 'Taxonomy Singular Name', 'ipress' ),
+//     'plural' => _x( 'Taxonomies Name', 'Taxonomy General Name', 'ipress' ),
+//     'post_types' => [ 'cpt' ],
+//     'args' => [
+//		 'public'      		 => false,
+//       'description' 		 => __( 'This is the Taxonomy name', 'ipress' ),
+//       'show_admin_column' => true
+//     ],
+//     'sortable' => true, //optional
+//     'filter' => true  //optional
 //    ]
 //  ];
 // ----------------------------------------------------------

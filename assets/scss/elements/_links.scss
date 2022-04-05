@@ -2,15 +2,8 @@
 // Elements - Links ( A tag etc ).
 //
 
-a,
-span,
-i,
-small {
-    display: inline-block;
-    text-decoration: none;
-}
-
 a {
+	display: inline-block;
     color: $color__link;
 	text-decoration: var(--link-decoration);
     transition: var(--link-transition);

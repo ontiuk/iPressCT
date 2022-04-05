@@ -11,14 +11,14 @@ textarea {
 	font-family: var(--font-primary);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-normal);
-	line-height: var(--line-height-body);
 	color: $color__text-primary;
 }
 
 body {
 	margin: 0;	
 	background: $color__background-body;
-    overflow-x: hidden;
+   	line-height: var(--line-height-body);
+	overflow-x: hidden;
 }
 
 section {

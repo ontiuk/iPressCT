@@ -19,12 +19,12 @@
 <section class="error-404 not-found">
 
 	<header class="page-header">
-		<h1 class="page-title error-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ipress-child' ); ?></h1>
-		<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Return home?', 'ipress-child' ); ?></a></p>
+		<h1 class="page-title error-title"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'ipress-child' ); ?></h1>
+		<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Return home?', 'ipress-child' ); ?></a></p>
 	</header><!-- .page-header -->
 
 	<div id="post-404" class="page-content">
-		<p><?php esc_html_e( 'Nothing found at this location.', 'ipress-child' ); ?></p>
+		<p><?php echo esc_html__( 'Nothing found at this location.', 'ipress-child' ); ?></p>
 		<?php get_search_form(); ?>
 
 		<?php do_action( 'ipress_404' ); ?>

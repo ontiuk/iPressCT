@@ -903,6 +903,25 @@ p.demo_store {
       .woocommerce .woocommerce-result-container .woocommerce-ordering select::-ms-expand {
         display: none; }
 
+.woocommerce a.added_to_cart {
+  padding: 0.375rem 1.325rem;
+  margin-top: 0.25rem;
+  color: #464646;
+  background-color: #ebe9eb;
+  border-color: #ebe9eb;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  font-weight: bold;
+  user-select: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+  .woocommerce a.added_to_cart:hover {
+    color: var(--color-white);
+    background-color: #337ab7;
+    filter: none; }
+
 @media screen and (max-width: 767px) {
   .woocommerce ul.products[class*=columns-] {
     flex-flow: column;
