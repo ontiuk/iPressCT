@@ -21,9 +21,9 @@ do_action( 'ipress_child_bootstrap' );
 //----------------------------------------------
 
 // Theme Name & Versioning: Change as required.
-define( 'IPRESS_CHILD_THEME_NAME', 	'iPress Child' );
+define( 'IPRESS_CHILD_THEME_NAME',  'iPress Child' );
 define( 'IPRESS_CHILD_TEXT_DOMAIN', 'ipress-child' );
-define( 'IPRESS_CHILD_THEME_WC',   	6.0 ); // WooCommerce minimum version required.
+define( 'IPRESS_CHILD_THEME_WC',    6.0 ); // WooCommerce minimum version required.
 
 // Directory Structure
 define( 'IPRESS_CHILD_DIR',           get_theme_file_path() );

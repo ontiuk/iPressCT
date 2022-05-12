@@ -30,16 +30,20 @@ if ( ! class_exists( 'IPR_Hooks' ) ) :
 			//	Core Hooks: Actions & Filters
 			//----------------------------------------------
 
-	        // Admin: Add phone number to general settings
-    	    add_action( 'admin_init', [ $this, 'register_setting' ], 10 );
-
 			//----------------------------------------------
 			//	Admin UI Hooks: Actions & Filters
 			//----------------------------------------------
+			
+	        // Admin: Add phone number to general settings
+    	    add_action( 'admin_init', [ $this, 'register_setting' ], 10 );
 		}
 
 		//----------------------------------------------
 		//  Core Hook Functions
+		//----------------------------------------------
+
+		//----------------------------------------------
+		//  Admin UI Functions
 		//----------------------------------------------
 
 		/**
@@ -73,10 +77,6 @@ if ( ! class_exists( 'IPR_Hooks' ) ) :
 			$admin_phone = get_option( 'admin_phone_number' );
 			echo sprintf( '<input type="text" id="admin_phone_number" name="admin_phone_number" class="regular-text ltr" value="%s" />', esc_attr( $admin_phone ) );
 		}
-
-		//----------------------------------------------
-		//  Admin UI Functions
-		//----------------------------------------------
 	}
 
 endif;
