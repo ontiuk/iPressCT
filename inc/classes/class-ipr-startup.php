@@ -19,12 +19,12 @@ if ( ! class_exists( 'IPR_Startup' ) ) :
 	/**
 	 * Set up core child theme features
 	 */
-	final class IPR_Startup {
+	final class IPR_Startup extends IPR_Registry {
 
 		/**
-		 * Class constructor
+		 * Class constructor, protected, set hooks
 		 */
-		public function __construct() {
+		protected function __construct() {
 
 			// Core WordPress functionality
 			add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
@@ -82,7 +82,7 @@ if ( ! class_exists( 'IPR_Startup' ) ) :
 				);
 
 				// Add editor styles
-				add_editor_style( IPRESS_CHILD_CSS_URL . '/editor.css' );
+				add_editor_style( IPRESS_CHILD_ASSETS_URL . '/css/editor.css' );
 			}
 
 			// Theme initialization
@@ -92,5 +92,5 @@ if ( ! class_exists( 'IPR_Startup' ) ) :
 
 endif;
 
-// Instantiate Theme Class
-return new IPR_Startup;
+// Instantiate Theme Startup Class
+return IPR_Startup::Init();

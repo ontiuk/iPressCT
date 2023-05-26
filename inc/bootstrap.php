@@ -4,7 +4,7 @@
  * iPress - WordPress Theme Framework
  * ==========================================================
  *
- * Set up and load child theme requirements.
+ * Set up and load child theme requirements and bootstrap initialization.
  *
  * @package iPress\Bootstrap
  * @link    http://ipress.uk
@@ -21,45 +21,25 @@ do_action( 'ipress_child_bootstrap' );
 //----------------------------------------------
 
 // Theme Name & Versioning: Change as required.
-define( 'IPRESS_CHILD_THEME_NAME',  'iPress Child' );
+define( 'IPRESS_CHILD_THEME_NAME', 'iPress Child' );
 define( 'IPRESS_CHILD_TEXT_DOMAIN', 'ipress-child' );
-define( 'IPRESS_CHILD_THEME_WC',    6.0 ); // WooCommerce minimum version required.
+define( 'IPRESS_CHILD_THEME_NAMESPACE', 'ipress-child' );
+define( 'IPRESS_CHILD_THEME_WC', 7.0 ); // WooCommerce minimum version required.
 
 // Directory Structure
-define( 'IPRESS_CHILD_DIR',           get_theme_file_path() );
-define( 'IPRESS_CHILD_ASSETS_DIR',    IPRESS_CHILD_DIR . '/assets' );
-define( 'IPRESS_CHILD_INCLUDES_DIR',  IPRESS_CHILD_DIR . '/inc' );
+define( 'IPRESS_CHILD_DIR', get_theme_file_path() );
+define( 'IPRESS_CHILD_ASSETS_DIR', IPRESS_CHILD_DIR . '/assets' );
+define( 'IPRESS_CHILD_INCLUDES_DIR', IPRESS_CHILD_DIR . '/inc' );
 define( 'IPRESS_CHILD_TEMPLATES_DIR', IPRESS_CHILD_DIR . '/templates' );
-define( 'IPRESS_CHILD_LANG_DIR',      IPRESS_CHILD_DIR . '/languages' );
-
-// Assets Directory Structure
-define( 'IPRESS_CHILD_CSS_DIR',       IPRESS_CHILD_ASSETS_DIR . '/css' );
-define( 'IPRESS_CHILD_JS_DIR',        IPRESS_CHILD_ASSETS_DIR . '/js' );
-define( 'IPRESS_CHILD_IMAGES_DIR',    IPRESS_CHILD_ASSETS_DIR . '/images' );
-define( 'IPRESS_CHILD_FONTS_DIR',     IPRESS_CHILD_ASSETS_DIR . '/fonts' );
-
-// Includes Directory Structure
-define( 'IPRESS_CHILD_LIB_DIR',       IPRESS_CHILD_INCLUDES_DIR . '/lib' );
-define( 'IPRESS_CHILD_ADMIN_DIR',     IPRESS_CHILD_INCLUDES_DIR . '/admin' );
-define( 'IPRESS_CHILD_CLASSES_DIR',   IPRESS_CHILD_INCLUDES_DIR . '/classes' );
-define( 'IPRESS_CHILD_BLOCKS_DIR',    IPRESS_CHILD_INCLUDES_DIR . '/blocks' );
-define( 'IPRESS_CHILD_FUNCTIONS_DIR', IPRESS_CHILD_INCLUDES_DIR . '/functions' );
-define( 'IPRESS_CHILD_WIDGETS_DIR',   IPRESS_CHILD_INCLUDES_DIR . '/widgets' );
+define( 'IPRESS_CHILD_LANG_DIR', IPRESS_CHILD_DIR . '/languages' );
+define( 'IPRESS_CHILD_STORE_DIR', IPRESS_CHILD_DIR . '/woocommerce' );
 
 // Directory Paths
-define( 'IPRESS_CHILD_URL',           get_theme_file_uri() );
-define( 'IPRESS_CHILD_ASSETS_URL',    IPRESS_CHILD_URL . '/assets' );
-define( 'IPRESS_CHILD_INCLUDES_URL',  IPRESS_CHILD_URL . '/inc' );
-define( 'IPRESS_CHILD_LANG_URL',      IPRESS_CHILD_URL . '/languages' );
-
-// Assets Directory Paths
-define( 'IPRESS_CHILD_CSS_URL',       IPRESS_CHILD_ASSETS_URL . '/css' );
-define( 'IPRESS_CHILD_JS_URL',        IPRESS_CHILD_ASSETS_URL . '/js' );
-define( 'IPRESS_CHILD_IMAGES_URL',    IPRESS_CHILD_ASSETS_URL . '/images' );
-define( 'IPRESS_CHILD_FONTS_URL',     IPRESS_CHILD_ASSETS_URL . '/fonts' );
-
-// Includes Directory Paths
-define( 'IPRESS_CHILD_LIB_URL',       IPRESS_CHILD_INCLUDES_URL . '/lib' );
+define( 'IPRESS_CHILD_URL', get_theme_file_uri() );
+define( 'IPRESS_CHILD_ASSETS_URL', IPRESS_CHILD_URL . '/assets' );
+define( 'IPRESS_CHILD_INCLUDES_URL', IPRESS_CHILD_URL . '/inc' );
+define( 'IPRESS_CHILD_LANG_URL', IPRESS_CHILD_URL . '/languages' );
+define( 'IPRESS_CHILD_STORE_URL', IPRESS_CHILD_URL . '/woocommerce' );
 
 //----------------------------------------------
 //	Theme SetUp & Configuration
@@ -85,6 +65,35 @@ require_once IPRESS_CHILD_INCLUDES_DIR . '/template-hooks.php';
 require_once IPRESS_CHILD_INCLUDES_DIR . '/template-functions.php';
 
 //----------------------------------------------
+//	Includes - Classes
+//----------------------------------------------
+
+// Registry helper
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-registry.php';
+
+// Core functionality
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-ajax.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-rest.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-api.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-cron.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-query.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-redirect.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-rules.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-startup.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-template.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-user.php';
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-schema.php';
+
+// Theme hooks
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-hooks.php';
+
+// Additional functionality
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-css.php';
+
+// Optional functionality : Hero
+require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-hero.php';
+
+//----------------------------------------------
 //	Init
 //----------------------------------------------
 
@@ -95,45 +104,11 @@ do_action( 'ipress_child_init' );
 $ipress = (object)[];
 
 // Register theme settings via customizer
-$ipress->settings = require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-settings.php';
-
-//----------------------------------------------
-//	Includes - Classes
-//----------------------------------------------
-
-// Theme hooks & functionality
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-hooks.php';
-
-// Ajax Functionality
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-ajax.php';
-
-// REST API functionality
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-api.php';
-
-// Scheduled cron tasks
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-cron.php';
-
-// Query modification
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-query.php';
-
-// Redirect functionality
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-redirect.php';
-
-// Rewrite rules & query vars
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-rules.php';
-
-// Register theme setup requirements
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-startup.php';
-
-// Template includes & redirects
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-template.php';
-
-// User functionality
-require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-user.php';
+$ipress->settings = require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-settings.php';
 
 // Admin UI functionality
 if ( is_admin() ) {
-	require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-admin.php';
+	require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-admin.php';
 }
 
 //----------------------------------------------
@@ -142,7 +117,12 @@ if ( is_admin() ) {
 
 // Advanced Custom Fields active?
 if ( ipress_acf_plugin_active() ) {
-	require_once IPRESS_CHILD_CLASSES_DIR . '/class-ipr-acf.php';
+	require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-acf.php';
+}
+
+// Kirki active?
+if ( ipress_kirki_active() ) {
+	require_once IPRESS_CHILD_INCLUDES_DIR . '/classes/class-ipr-kirki.php';
 }
 
 // WooCommerce active?

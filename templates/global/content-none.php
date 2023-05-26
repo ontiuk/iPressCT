@@ -44,12 +44,12 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, nothing matched your search terms. Please try again with different keywords.', 'ipress-child' ); ?></p>
+			<p><?php echo esc_html__( 'Sorry, nothing matched your search terms. Please try again with different keywords.', 'ipress-child' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'We can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ipress-child' ); ?></p>
+			<p><?php echo esc_html__( 'We can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ipress-child' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

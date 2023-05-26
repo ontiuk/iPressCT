@@ -50,3 +50,10 @@
 * (05 April 2022)		2.3.0	Refactor Custom Post-Type & Taxonomy functionality
 * (06 April 2022)		2.3.1	Refactor sidebar functionality
 * (12 May 2022)			2.3.2	Semantic markup change main & homepage
+* (16 May 2022)			2.3.3	Extended scripts & styles functionality, updated config file
+* (17 May 2022)			2.3.4	Additional ACF & product functions
+* (28 November 2022)	2.4.0	Refinements and optimisation
+* (23 May 2023)			2.5.0	Increased versioning for WordPress, WooCommerce, & PHP
+* (24 May 2023)			2.6.0	Refactored Singleton instantiation via Registry class. Refactored REST class. Refactored custom post-type & taxonomy classses
+* (24 May 2023)			2.6.1	Deprecated Schema functionality to extension
+* (25 May 2023)			2.6.2	ACF additional REST & CTP / TX configuration info
