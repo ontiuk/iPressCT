@@ -74,7 +74,9 @@ $ip_suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 //   ],
 //
 //   // Script attributes ( defer, async, integrity ) : [ 'route' => [ [ 'handle', key ], ...] ]
-//   'attr' => []
+//   'attr' => [
+//	   'integrity' => []
+//   ]
 // ];
 //----------------------------------------------------------------------
 
@@ -160,7 +162,9 @@ add_filter( 'ipress_scripts', function() use( $ip_suffix ) {
 //   'inline' => []
 //
 //   // Style attributes ( defer, async, integrity ): [ 'route' => [ [ 'handle', key ], ...] ]
-//   'attr' 	=> []
+//   'attr' => [
+//	   'integrity' => []
+//   ]
 // ];
 //----------------------------------------------------------------------
 
@@ -304,6 +308,11 @@ add_filter( 'ipress_media_images', function () {
 	];
 } );
 
+// Set post-thumbnail support for cpt, override at lower priority
+add_filter( 'ipress_post_thumbnails_post_types', function() {
+	return [ 'post' ];
+} );
+
 //----------------------------------------------
 //	Sidebars Configuration
 //----------------------------------------------
@@ -324,6 +333,11 @@ add_filter( 'ipress_default_sidebars', function() {
 	];
 } );
 
+// Set sidebar defaults, for wrapping widgets, override at lower priority
+add_filter( 'ipress_sidebar_defaults', function( $defaults ) {
+	return $defaults; // [ 'before_widget', 'after_widget', 'before_title', 'after_title', 'class' ]
+} );
+
 // Generate footer sidebars, override at lower priority
 add_filter( 'ipress_footer_sidebars', function() {
 	return []; // or, false for numerical sidebars
@@ -341,6 +355,9 @@ add_filter ( 'ipress_widgets', function() {
 //----------------------------------------------
 //	Custom Hooks & Filters
 //----------------------------------------------
+
+// Enable or disable front page hero section, use '__return_false'to disable
+add_filter( 'ipress_custom_hero', '__return_true' );
 
 //----------------------------------------------
 //	Shortcode Configuration

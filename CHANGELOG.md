@@ -57,3 +57,4 @@
 * (24 May 2023)			2.6.0	Refactored Singleton instantiation via Registry class. Refactored REST class. Refactored custom post-type & taxonomy classses
 * (24 May 2023)			2.6.1	Deprecated Schema functionality to extension
 * (25 May 2023)			2.6.2	ACF additional REST & CTP / TX configuration info
+* (31 May 2023)			2.6.3	Additional configuration options
