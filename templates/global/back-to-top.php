@@ -21,11 +21,13 @@ if ( ! $back_to_top ) { return; }
 $ip_back_to_top_title = apply_filters( 'ipress_back_to_top_title', __( 'Scroll back to top', 'ipress-child' ) );
 $ip_back_to_top_scroll_speed = apply_filters( 'ipress_back_to_top_scroll_speed', 400 );
 $ip_back_to_top_scroll_start = apply_filters( 'ipress_back_to_top_scroll_start', 300 );
-$ip_back_to_top_icon = apply_filters( 'ipress_back_to_top_icon', IPRESS_CHILD_ASSETS_URL . '/images/icons/back-to-top.png' );
+$ip_back_to_top_icon = apply_filters( 'ipress_back_to_top_icon', IPRESS_ASSETS_URL . '/images/icons/back-to-top.png' );
 
 // Display back to top link
 echo sprintf(
-	'<a title="%1$s" aria-label="%1$s" rel="nofollow" class="back-to-top-link" data-scroll-speed="%2$s" data-scroll-start="%3$s">%4$s</a>',
+	'<a title="%1$s" aria-label="%1$s" rel="nofollow" class="back-to-top-link" data-scroll-speed="%2$s" data-scroll-start="%3$s">
+		<img src="%4$s" alt="%1$s" />
+	</a>',
 	esc_attr ( $ip_back_to_top_title ),
 	absint( $ip_back_to_top_scroll_speed),
 	absint(  $ip_back_to_top_scroll_start ),
