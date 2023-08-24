@@ -81,8 +81,16 @@ if ( ! class_exists( 'IPR_Startup' ) ) :
 					)
 				);
 
+				// Set editor styles path
+				$ip_editor_styles = apply_filters(
+					'ipress_editor_styles',
+					[
+						IPRESS_CHILD_ASSETS_URL . '/css/editor.css'
+					]
+				);
+
 				// Add editor styles
-				add_editor_style( IPRESS_CHILD_ASSETS_URL . '/css/editor.css' );
+				add_editor_style( $ip_editor_styles );
 			}
 
 			// Theme initialization

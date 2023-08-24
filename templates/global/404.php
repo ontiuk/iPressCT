@@ -23,13 +23,19 @@
 		<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Return home?', 'ipress-child' ); ?></a></p>
 	</header><!-- .page-header -->
 
+	<?php do_action( 'ipress_before_404_content' ); ?>
+
 	<div id="post-404" class="page-content">
+
 		<p><?php echo esc_html__( 'Nothing found at this location.', 'ipress-child' ); ?></p>
+
 		<?php get_search_form(); ?>
 
 		<?php do_action( 'ipress_404' ); ?>
 
 	</div><!-- .page-content -->
+
+	<?php do_action( 'ipress_after_404_content' ); ?>
 
 </section><!-- .error-404 -->
 

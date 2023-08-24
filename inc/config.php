@@ -59,7 +59,7 @@ $ip_suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 //   'login' => [],
 //
 //   // Inline scripts: [ 'handle' => [ 'src' => text/function, 'position' => 'before|after' ] ]
-//   'inline'	=> [],
+//   'inline' => [],
 //
 //   // Localize scripts: [ 'handle' => [ 'name' => name, trans => function/path_url ] ]
 //   'local' => [
@@ -154,7 +154,7 @@ add_filter( 'ipress_scripts', function() use( $ip_suffix ) {
 //   'print' => [],
 //
 //   // Theme styles: [ 'handle' => [ 'path_url', (array)dependencies, 'version', 'media' ] ... ]
-//   'custom'  => [
+//   'custom' => [
 //     'ipress' => [ IPRESS_CHILD_URL . '/style.css', [], NULL ]
 //   ],
 //
@@ -380,6 +380,8 @@ if ( is_admin() ) {
 //	WooCommerce Configuration
 //----------------------------------------------
 
+//add_filter( 'ipress_wc_header_cart_dropdown', '__return_true' );
+
 // Woocommerce functionality, if active
 if ( ipress_wc_active() ) {
 
@@ -447,3 +449,6 @@ if ( ipress_wc_active() ) {
 // - Analytics
 // - Adwords Tracking
 //--------------------------------------
+
+// Post configuration
+do_action( 'ipress_after_child_config' );
