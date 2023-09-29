@@ -20,7 +20,7 @@
 
 	<header class="page-header">
 		<h1 class="page-title error-title"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'ipress-child' ); ?></h1>
-		<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Return home?', 'ipress-child' ); ?></a></p>
+		<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo apply_filters( 'ipress_404_title', esc_html__( 'Return home?', 'ipress-child' ) ); ?></a></p>
 	</header><!-- .page-header -->
 
 	<?php do_action( 'ipress_before_404_content' ); ?>
@@ -29,14 +29,19 @@
 
 		<p><?php echo esc_html__( 'Nothing found at this location.', 'ipress-child' ); ?></p>
 
-		<?php the_widget( 'WC_Widget_Product_Search' ); ?>
+		<?php the_widget( 'WC_Widget_Product_Search', [
+	   		'before_widget' => sprintf( '<section aria-label="%s">', esc_html__( 'Search', 'ipress-child' ) ),
+			'after_widget' =>'</section>'
+		] ); ?>
 
-		<nav class="error-product-categories" aria-label="<?php echo esc_html__( 'Product Categories', 'ipress-child' ); ?>">
+		<nav class="error-product-categories" aria-label="<?php echo esc_attr__( 'Product Categories', 'ipress-child' ); ?>">
 
-			<h2><?php echo esc_html__( 'Product Categories', 'ipress' ); ?></h2>
+			<h2><?php echo esc_html__( 'Product Categories', 'ipress-child' ); ?></h2>
 			<?php the_widget( 'WC_Widget_Product_Categories', [ 'count' => 1, 'title' => '' ] ); ?>
 
 		</nav>
+
+		<?php do_action( 'ipress_404_product' ); ?>
 
 		<section class="error-popular-products" aria-label="<?php echo esc_html__( 'Popular Products', 'ipress-child' ); ?>">
 

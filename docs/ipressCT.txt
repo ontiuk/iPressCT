@@ -8,12 +8,10 @@ Structure: Folders & Files
 |-archive.php
 |-attachment.php
 |-author.php
-|-browserconfig.xml
 |-category.php
 |-CHANGELOG.md
 |-comments.php
 |-date.php
-|-favicon.ico
 |-footer.php
 |-front-page.php
 |-functions.php
@@ -33,6 +31,7 @@ Structure: Folders & Files
 |-sidebar-shop-product.php
 |-single.php
 |-style.css
+|-style.min.css
 |-tag.php
 |-taxonomy.php
 |-template-account.php
@@ -45,57 +44,69 @@ Structure: Folders & Files
 |		|-/woocommerce
 |			|-woocommerce.css
 |			|-woocommerce.min.css
+|			|-/extensions
+|			|-/scss
+| 				|-various subfolders and woocommerce.scss
 | 	|-/fonts
 | 	|-/images
-| 		|-various folders and example images
+| 		|-various subfolders and example images
 | 	|-/js
+|		|-admin.js
+|		|-admin.min.js
+|		|-app.js
+|		|-app.minjs
 |		|-customize.js
 |		|-customize-controls.js
 |		|-customize-preview.js
-|		|-theme.js
-|		|-theme.min.js
+|		|-navigation.js
+|		|-navigation.min.js
 | 		|-/lib
 | 	|-/scss
-| 		|-various dummy folders and example style.scss
+| 		|-various subfolders and style.scss
 |-/inc
 |	|-blocks.php
 |	|-bootstrap.php
 | 	|-config.php
-| 	|-customizer.php
 | 	|-functions.php
 | 	|-template-functions.php
 | 	|-template-hooks.php
 | 	|-/admin
 | 	|-/blocks
 | 	|-/classes
-| 		|-class-acf.php
-| 		|-class-admin.php
-| 		|-class-ajax.php
-| 		|-class-api.php
-| 		|-class-cron.php
-| 		|-class-hooks.php
-| 		|-class-query.php
-| 		|-class-redirect.php
-| 		|-class-rules.php
-| 		|-class-settings.php
-| 		|-class-startup.php
-| 		|-class-template.php
-| 		|-class-user.php
-| 	|-/controls
-| 		|-class-arbitrary.php
-| 		|-class-checkbox-multiple.php
-| 		|-class-seperator.php
+| 		|-class-ipr-acf.php
+| 		|-class-ipr-admin.php
+| 		|-class-ipr-ajax.php
+| 		|-class-ipr-api.php
+| 		|-class-ipr-attr.php
+| 		|-class-ipr-blocks.php
+| 		|-class-ipr-cron.php
+| 		|-class-ipr-css.php
+| 		|-class-ipr-hero.php
+| 		|-class-ipr-hooks.php
+| 		|-class-ipr-kirki.php
+| 		|-class-ipr-query.php
+| 		|-class-ipr-redirect.php
+| 		|-class-ipr-registry.php
+| 		|-class-ipr-rest.php
+| 		|-class-ipr-rules.php
+| 		|-class-ipr-settings.php
+| 		|-class-ipr-startup.php
+| 		|-class-ipr-template.php
+| 		|-class-ipr-user.php
 | 	|-/functions
-|		|-product.php
+|		|-acf.php
+|		|-kirki.php
+|		|-settings.php
 |		|-template.php
 | 	|-/lib
 |		|-acf-config.php
 |		|-/acf
 | 	|-/widgets
 | 	|-/woocommerce
-|		|-class-adjacent-products.php
-|		|-class-customizer.php
-|		|-class-woocommerce.php
+|		|-class-ipr-woocommerce.php
+|		|-class-ipr-woocommerce-adjacent-products.php
+|		|-class-ipr-woocommerce-api.php
+|		|-class-ipr-woocommerce-customizer.php
 |		|-functions.php
 |		|-template-functions.php
 |		|-template-hooks.php
@@ -116,19 +127,21 @@ Structure: Folders & Files
 | 	|-home.php
 | 	|-index.php
 | 	|-search.php
+| 	|-/block
 | 	|-/front
+| 		|-edit-link.php
 | 		|-hero.php
+| 		|-hero_2.php
 | 	|-/global
 | 		|-404.php
 | 		|-404-product.php
+| 		|-back-to-top.php
 | 		|-content.php
 | 		|-content-none.php
 | 		|-loader.php
-| 		|-paginate.php
-| 		|-pagination.php
+| 		|-page-header-image.php
 | 		|-post-image.php
 | 		|-post-thumbnail.php
-| 		|-scroll-top.php
 | 		|-skip-links.php
 | 		|-/breadcrumbs
 | 			|-archive.php
@@ -143,14 +156,21 @@ Structure: Folders & Files
 | 			|-tag.php
 | 			|-taxonomy.php
 | 		|-/footer
+| 			|-container.php
+| 			|-container-close.php
 | 			|-footer-widgets.php
 | 			|-site-credits.php
 | 		|-/header
 | 			|-container.php
 | 			|-container-close.php
 | 			|-site-branding.php
+| 			|-site-branding-container.php
+| 			|-site-branding-container-close.php
+| 			|-site-logo.php
 | 			|-site-navigation.php
+| 			|-site-navigation-search.php
 | 	|-/layout
+| 		|-top-bar.php
 | 	|-/loop
 | 		|-content.php
 | 		|-excerpt.php
@@ -163,7 +183,9 @@ Structure: Folders & Files
 | 		|-attachment.php
 | 		|-content.php
 | 		|-edit-link.php
+| 		|-footer.php
 | 		|-header.php
+| 		|-header-image.php
 | 		|-image.php
 | 	|-/single
 | 		|-content.php
@@ -172,8 +194,10 @@ Structure: Folders & Files
 | 		|-header.php
 | 		|-image.php
 | 		|-meta.php
+| 		|-taxonomy.php
 | 	|-/widget
 |-/woocommerce
+| 	|-header-cart.php
 | 	|-header-cart-content.php
 | 	|-header-cart-link.php
 | 	|-product-search.php
@@ -181,15 +205,50 @@ Structure: Folders & Files
 | 	|-/admin
 | 	|-/auth
 | 	|-/cart
+| 		|-container-start.php
+| 		|-container-end.php
+| 		|-header.php
 | 	|-/checkout
+| 		|-container-start.php
+| 		|-container-end.php
+| 		|-header.php
 | 	|-/emails
+| 		|-/plain
 | 	|-/global
+| 		|-breadcrumb.php
+| 		|-container-start.php
+| 		|-container-end.php
+| 		|-product-container-start.php
+| 		|-product-container-end.php
+| 		|-quantity-input.php
+| 		|-result-container-start.php
+| 		|-result-container-end.php
+| 		|-wrapper-start.php
+| 		|-wrapper-end.php
+| 		|-/breadcrumbs
+| 			|-account.php
+| 			|-cart.php
+| 			|-checkout.php
+| 			|-default.php
+| 			|-product-archive.php
+| 			|-product-cat.php
+| 			|-product-tag.php
+| 			|-single-product.php
 | 	|-/loop
 | 	|-/myaccount
+| 		|-container-start.php
+| 		|-container-end.php
+| 		|-header.php
+| 		|-navigation-container-start.php
+| 		|-navigation-container-end.php
+| 		|-profile.php
 | 	|-/notices
 | 	|-/order
 | 	|-/reports
 | 	|-/single-product
+| 		|-pagination.php
+| 		|-/add-to-cart
+| 		|-/tabs
 
 Structure: Files & Templates
 -------------------------------
@@ -208,17 +267,21 @@ Structure: Files & Templates
 |	|- templates/global/content-none.php
 |- attachment.php
 |	|- templates/attachment.php
+|			|- templates/page/attachment.php
+|			|- templates/page/content.php
 |	|- templates/global/content-none.php
 |- comments.php
 |- footer.php
 |	|- templates/global/footer/site-credit.php
 |	|- templates/global/footer/footer-widgets.php
 |- front-page.php
-|	|- templates/global/content.php
+|	|- templates/global/content-home.php
+|		|- templates/front/hero.php (optional hero_2.php)
+|		|- templates/front-edit-link.php
 |- functions.php
 |- header.php
 |	|- templates/global/header/site-branding.php
-|	|- templates/global/site-navigation.php
+|	|- templates/global/header/site-navigation.php
 |- home.php
 |	|- templates/home.php
 |		|- templates/content.php
@@ -238,14 +301,18 @@ Structure: Files & Templates
 |			|- templates/loop/content.php
 |			|- templates/loop/excerpt.php
 |			|- templates/loop/footer.php
+|			|- templates/loop/sticky.php
 |	|- templates/global/content-none.php
 |- page.php
 |	|- templates/content-page.php
 |		|- templates/page/header.php
+|		|- templates/page/header-image.php
 |		|- templates/page/image.php
 |		|- templates/loop/attachment.php
 |		|- templates/loop/edit-link.php
 |		|- templates/loop/content.php
+|		|- templates/loop/footer.php
+|	|- templates/global/content-none.php
 |- privacy-policy.php
 |	|- templates/content-privacy.php
 |- search.php
@@ -256,6 +323,7 @@ Structure: Files & Templates
 |			|- templates/loop/meta.php
 |			|- templates/loop/excerpt.php
 |			|- templates/loop/footer.php
+|			|- templates/loop/sticky.php
 |	|- templates/global/content-none.php
 |- single.php
 |	|- templates/single.php
@@ -263,6 +331,7 @@ Structure: Files & Templates
 |			|- templates/single/header.php
 |			|- templates/single/image.php
 |			|- templates/single/meta.php
+|			|- templates/single/taxonomy.php
 |			|- templates/single/footer.php
 |			|- templates/single/edit-link.php
 |			|- templates/single/content.php
@@ -282,29 +351,35 @@ Hooks & Classes
 404.php
 actions: 
 	ipress_before_main_content
-		ipress_404_before 
-		ipress_404_after 
+		ipress_before_404 
+			ipress_before_404_content 
+			(ipress_404_product)
+			ipress_404 
+			ipress_after_404_content 
+		ipress_after_404 
 	ipress_after_main_content	
 main class: error-page
 
 archive.php ( author.php / date.php / category.php / tag.php / taxonomy.php )
 actions: 
 	ipress_before_main_content
-	ipress_archive_before
-		ipress_loop_before
-			ipress_article_before
+	ipress_before_archive
+	ipress_before_archive_title
+	ipress_after_archive_title
+		ipress_before_loop
+			ipress_before_article
 			ipress_loop
-				ipress_loop_header_before
-				ipress_loop_header_after
-				ipress_loop_content_before
+				ipress_before_loop_header
+				ipress_after_loop_header
+				ipress_before_loop_content
 				ipress_loop_content
-				ipress_loop_content_after
-				ipress_loop_footer_before
+				ipress_after_loop_content
+				ipress_before_loop_footer
 				ipress_loop_footer
-				ipress_loop_footer_after
-			ipress_article_after
-		ipress_loop_after
-	ipress_archive_after
+				ipress_after_loop_footer
+			ipress_after_article
+		ipress_after_loop
+	ipress_after_archive
 	ipress_sidebar
 	ipress_after_main_content	
 main class: archive-page ( author-page, data-page, category-page, tag-page, taconomy-page )
@@ -312,11 +387,11 @@ main class: archive-page ( author-page, data-page, category-page, tag-page, taco
 attachment.php
 actions: 
 	ipress_before_main_content
-	ipress_page_before
-		ipress_attachment_before
+	ipress_before_page
+		ipress_before_attachment
 		ipress_attachment
-		ipress_attachment_after
-	ipress_page_after
+		ipress_after_attachment
+	ipress_after_page
 	ipress_after_main_content	
 main class: attachment-page
 
@@ -329,68 +404,82 @@ actions:
 header.php ( included & called before all other templates via get_header() )
 actions:
 	wp_body_open ( via wp_body_open() ) 
+	ipress_before_site
 	ipress_before_header
-	ipress_header_top
+	ipress_before_header_content
 	ipress_header
-	ipress_header_bottom
+	ipress_after_header_content
 	ipress_before_content
 
 footer.php ( included and called after all other templates via get_footer() )
 actions:
 	ipress_before_footer
-	ipress_footer_top
+	ipress_before_footer_content
 	ipress_footer
-	ipress_footer_bottom
+	ipress_after_footer_content
 	ipress_after_footer
 	ipress_after
 
 front-page.php
 actions:
 	ipress_before_main_content
+	ipress_before_homepage
+		ipress_before_homepage_header
+		ipress_before_homepage_content
+		ipress_after_homepage_content
+		ipress_after_homepage_footer
+	ipress_after_homepage
 	ipress_homepage
-	ipress_homepage_after
 	ipress_after_main_content	
 main class: front-page
 
 home.php
 actions:
 	ipress_before_main_content
-	ipress_archive_before
-		ipress_loop_before 
-			ipress_article_before
-			ipress_loop
-				ipress_loop_header_before
-				ipress_loop_header_after
-				ipress_loop_content_before
+	ipress_before_archive
+		ipress_before_loop (home) 
+			ipress_before_article
+			ipress_loop, ipress_loop_xxx ( allowed post-formats )
+				ipress_before_loop_header
+					ipress_loop_header
+					ipress_after_loop_header_title
+				ipress_after_loop_header
+				ipress_before_loop_content
 				ipress_loop_content
-				ipress_loop_content_after
-				ipress_loop_footer_before
+				ipress_after_loop_content
+				ipress_before_loop_footer
+					ipress_before_loop_footer_content
 				ipress_loop_footer
-				ipress_loop_footer_after
-			ipress_article_after
-		ipress_loop_after
-	ipress_archive_after
-	ipress_sidebar
+				ipress_after_loop_footer
+			ipress_after_article
+		ipress_after_loop (home)
+	ipress_after_archive
 	ipress_after_main_content	
+	ipress_sidebar
 main class: home-page
 
 index.php
 actions:
 	ipress_before_main_content
-	ipress_archive_before
-		ipress_loop_before 
-			ipress_article_before
+	ipress_before_archive
+	ipress_before_archive_title
+	ipress_after_archive_title
+		ipress_before_loop (index) 
+			ipress_before_article (index)
 			ipress_loop, ipress_loop_xxx ( allowed post-formats )
-				ipress_loop_header_before
-				ipress_loop_header_after
-				ipress_loop_content_before
+				ipress_before_loop_header
+					ipress_loop_header
+					ipress_after_loop_header_title
+				ipress_after_loop_header
+				ipress_before_loop_content
 				ipress_loop_content
-				ipress_loop_content_after
-				ipress_loop_footer_before
+				ipress_after_loop_content
+				ipress_before_loop_footer
+					ipress_before_loop_footer_content
 				ipress_loop_footer
-				ipress_loop_footer_after
-			ipress_article_after
-		ipress_loop_after
+				ipress_after_loop_footer
+			ipress_after_article
+		ipress_after_loop (index)
 	ipress_archive_after
 	ipress_sidebar
 	ipress_after_main_content	
@@ -399,13 +488,17 @@ main class: index-page
 page.php
 actions:
 	ipress_before_main_content
-	ipress_page_before
-		ipress_article_before
+	ipress_before_page
+		ipress_before_article (page)
 			ipress_page
-			ipress_page_header_before
-			ipress_page_content_before
-			ipress_page_content_after								ipress_article_after
-	ipress_page_after
+			ipress_before_page_header
+			ipress_page_header
+			ipress_after_page_header_title
+			ipress_before_page_content
+			ipress_page_content
+			ipress_after_page_content
+		ipress_after_article
+	ipress_after_page
 	ipress_sidebar
 	ipress_after_main_content	
 main class: content-page
@@ -413,13 +506,15 @@ main class: content-page
 privacy-policy.php
 actions:
 	ipress_before_main_content
-	ipress_page_before
-		ipress_privacy_before
+	ipress_before_page
+		ipress_before_privacy
 			ipress_privacy
-			ipress_page_header_before
-			ipress_page_content_before
-			ipress_page_content_after								ipress_privacy_after
-	ipress_page_after
+			ipress_before_page_header
+			ipress_page_header
+			ipress_after_page_header_title
+			ipress_before_page_content
+			ipress_after_page_content							ipress_after_privacy
+	ipress_after_page
 	ipress_sidebar
 	ipress_after_main_content	
 main class: privacy-page
@@ -427,21 +522,26 @@ main class: privacy-page
 search.php
 actions:
 	ipress_before_main_content
-	ipress_search_before
-		ipress_loop_before
-			ipress_article_before
-				ipress_loop, ipress_loop_xxx ( allowed post-formats )
-				ipress_loop_header_before
-				ipress_loop_header_after
-				ipress_loop_content_before
+	ipress_before_search
+	ipress_before_archive_title
+	ipress_after_archive_title
+		ipress_before_loop (search) 
+			ipress_before_article (search)
+			ipress_loop, ipress_loop_xxx ( allowed post-formats )
+				ipress_before_loop_header
+					ipress_loop_header
+					ipress_after_loop_header_title
+				ipress_after_loop_header
+				ipress_before_loop_content
 				ipress_loop_content
-				ipress_loop_content_after
-				ipress_loop_footer_before
+				ipress_after_loop_content
+				ipress_before_loop_footer
+					ipress_before_loop_footer_content
 				ipress_loop_footer
-				ipress_loop_footer_after
-			ipress_article_after
-		ipress_loop_after
-	ipress_search_after
+				ipress_after_loop_footer
+			ipress_after_article
+		ipress_after_loop (search)
+	ipress_after_search
 	ipress_sidebar
 	ipress_after_main_content	
 main class: search-page
@@ -449,12 +549,22 @@ main class: search-page
 single.php
 actions:
 	ipress_before_main_content
-	ipress_single_before
-		ipress_article_before
-			ipress_single_top
+	ipress_before_single
+		ipress_before_article (single)
+			ipress_before_single_content
+				ipress_before_post_header
+				ipress_post_header
+				ipress_after_post_header_title
+				ipress_after_post_header
+				ipress_before_post_content
+				ipress_post_content
+				ipress_after_post_content
+				ipress_before_single_footer
+				ipress_post_footer
+				ipress_after_single_footer
 			ipress_single
-			ipress_single_bottom									ipress_article_after
-	ipress_single_after
+			ipress_after_single_content							ipress_after_article (single)
+	ipress_after_single
 	ipress_sidebar
 	ipress_after_main_content	
 main class: single-page
@@ -495,7 +605,12 @@ main class: checkout-page
 template-home.php
 actions:
 	ipress_before_main_content
+	ipress_before_homepage 
+		ipress_before_homepage_header
+		ipress_before_homepage_content
+		ipress_after_homepage_content
+		ipress_after_homepage_footer
 	ipress_homepage
 	ipress_homepage_after 
 	ipress_after_main_content	
-main class: front-page
+main class: front-page home-template

@@ -20,10 +20,12 @@ do_action( 'ipress_child_bootstrap' );
 //	Theme Defines
 //----------------------------------------------
 
-// Theme Name & Versioning: Change as required.
+// Theme Name: Change as required.
 define( 'IPRESS_CHILD_THEME_NAME', 'iPress Child' );
 define( 'IPRESS_CHILD_TEXT_DOMAIN', 'ipress-child' );
 define( 'IPRESS_CHILD_THEME_NAMESPACE', 'ipress-child' );
+
+// Theme Versioning
 define( 'IPRESS_CHILD_THEME_WC', 7.0 ); // WooCommerce minimum version required.
 
 // Directory Structure

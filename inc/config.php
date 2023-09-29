@@ -308,7 +308,7 @@ add_filter( 'ipress_media_images', function () {
 	];
 } );
 
-// Set post-thumbnail support for cpt, override at lower priority
+// Set post-type post-thumbnail support, override at lower priority
 add_filter( 'ipress_post_thumbnails_post_types', function() {
 	return [ 'post' ];
 } );

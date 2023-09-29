@@ -26,7 +26,7 @@ if ( ! class_exists( 'IPR_Woocommerce_Customizer' ) ) :
 		 */
 		protected function __construct() {
 
-			// Theme Woocommerce customizer api registration
+			// Theme WooCommerce customizer api registration
 			add_action( 'customize_register', [ $this, 'customize_register' ], 10 );
 
 			// Theme customizer api registration
@@ -38,7 +38,7 @@ if ( ! class_exists( 'IPR_Woocommerce_Customizer' ) ) :
 		//----------------------------------------------
 
 		/**
-		 * Set up customizer and theme specific Woocommerce settings
+		 * Set up customizer and theme specific WooCommerce settings
 		 * - Fonts & typography
 		 * - Background & header colours
 		 * - Button and text colours
@@ -60,7 +60,7 @@ if ( ! class_exists( 'IPR_Woocommerce_Customizer' ) ) :
 				[
 					'panel'       => 'woocommerce',
 					'title'       => __( 'Theme', 'ipress-child' ),
-					'description' => esc_html__( 'Add theme specific Woocommerce settings.', 'ipress-child' ),
+					'description' => esc_html__( 'Add theme specific WooCommerce settings.', 'ipress-child' ),
 					'capability'  => 'edit_theme_options',
 					'priority'    => 50,
 				]
@@ -199,5 +199,5 @@ if ( ! class_exists( 'IPR_Woocommerce_Customizer' ) ) :
 
 endif;
 
-// Instantiate Theme Woocommerce Customizer Class
+// Instantiate Theme WooCommerce Customizer Class
 return IPR_Woocommerce_Customizer::Init();

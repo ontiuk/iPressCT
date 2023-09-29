@@ -88,8 +88,8 @@ if ( ! class_exists( 'IPR_Hooks' ) ) :
 			// Search
 			if ( is_search() ) {
 				return ( 0 === $wp_query->found_posts )
-					? sprintf( _x( 'Search: No Results for <span class="search-query">%1$s</span>', 'Search results count', 'ipress' ), esc_html( get_search_query() ) )
-					: sprintf(_nx( 'Search: %1$s Result for <span class="search-query">%2$s</span>', 'Search: %1$s Results for <span class="search-query">%2$s</span>', $wp_query->found_posts, 'Search results count', 'ipress' ),	esc_attr( $wp_query->found_posts ),	esc_html( get_search_query() ) );
+					? sprintf( _x( 'Search: No Results for <span class="search-query">%1$s</span>', 'Search results count', 'ipress-child' ), esc_html( get_search_query() ) )
+					: sprintf(_nx( 'Search: %1$s Result for <span class="search-query">%2$s</span>', 'Search: %1$s Results for <span class="search-query">%2$s</span>', $wp_query->found_posts, 'Search results count', 'ipress-child' ), esc_attr( $wp_query->found_posts ),	esc_html( get_search_query() ) );
 			}
 
 			return $title;
