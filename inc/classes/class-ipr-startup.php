@@ -23,6 +23,8 @@ if ( ! class_exists( 'IPR_Startup' ) ) :
 
 		/**
 		 * Class constructor, protected, set hooks
+		 * 
+		 * @access protected
 		 */
 		protected function __construct() {
 

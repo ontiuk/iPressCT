@@ -229,8 +229,11 @@ add_filter( 'ipress_fonts', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Theme Custom Post Types & Taxonomies
-//
+// Theme Custom Post Types & Taxonomies
+// ========================================
+// 
+// Set up custom post-types and associated taxonomies
+// 
 // @see https://developer.wordpress.org/reference/functions/register_post_type
 // @see https://developer.wordpress.org/reference/functions/register_taxonomy
 //
@@ -256,9 +259,11 @@ add_filter( 'ipress_post_types', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Theme Custom Post Types & Taxonomies
-//	====================================
+// Theme Custom Post Types & Taxonomies
+// ====================================
 //
+// Set up custom taxonomies
+// 
 // @see https://developer.wordpress.org/reference/functions/register_taxonomy
 //
 // return [
@@ -283,15 +288,17 @@ add_filter( 'ipress_taxonomies', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Menus Configuration
-//	===================
+// Menus Configuration
+// =======================
 //
-//  @see https://developer.wordpress.org/reference/functions/register_nav_menus/
+// Register theme navigation menus
+//  
+// @see https://developer.wordpress.org/reference/functions/register_nav_menus/
 //
-//  return [
-//    'primary' => __( 'Primary Menu', 'ipress' ),
-//	  'header-nav' => __( 'Header navigation', 'ipress' )
-//	];
+// return [
+//   'primary' => __( 'Primary Menu', 'ipress-child' ),
+//  'header-nav' => __( 'Header navigation', 'ipress-child' )
+// ];
 //------------------------------------------------------------------------------------
 
 // Register default menu locations, override at lower priority
@@ -302,7 +309,11 @@ add_filter( 'ipress_nav_menus', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Images Configuration
+// Images Configuration
+// ========================================
+// 
+// Register new image sizes and modify image support
+// 
 //------------------------------------------------------------------------------------
 
 // Add custom image size, override at lower priority
@@ -324,12 +335,12 @@ add_filter( 'ipress_post_thumbnails_post_types', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Sidebars Configuration
-//	======================
+// Sidebars Configuration
+// ==========================
 //
-//	Register Sidebar areas for widgets & blocks
+// Register Sidebar areas for widgets & blocks
 //
-//	@see https://developer.wordpress.org/reference/functions/register_sidebar/
+// @see https://developer.wordpress.org/reference/functions/register_sidebar/
 //
 //------------------------------------------------------------------------------------
 
@@ -360,12 +371,12 @@ add_filter( 'ipress_footer_sidebars', function() {
 } );
 
 //------------------------------------------------------------------------------------
-//	Widgets Configuration
-//	======================
+// Widgets Configuration
+// ======================
 //
-//	Register classic widgets for injecting into sidebar areas
+// Register classic widgets for injecting into sidebar areas
 //
-//	@see https://developer.wordpress.org/reference/functions/register_widget/
+// @see https://developer.wordpress.org/reference/functions/register_widget/
 //
 //------------------------------------------------------------------------------------
 
@@ -375,7 +386,11 @@ add_filter ( 'ipress_widgets', function() {
 } );
 
 //----------------------------------------------
-//	Custom Hooks & Filters
+// Custom Hooks & Filters
+// ==========================
+//
+// Modify core WordPress functionality
+//
 //----------------------------------------------
 
 // Enable or disable front page hero section, use '__return_false'to disable
@@ -408,15 +423,27 @@ add_action( 'wp_default_scripts', function( $scripts ) {
 	}
 } );
 
+// Disable comments functionality as best as possible
+add_filter( 'ipress_comments_clean', '__return_true' );
+
+// Get rid of the horrible emoticons
+add_filter( 'ipress_disable_emojicons', '__return_true' );
+
 //----------------------------------------------
-//	Shortcode Configuration
-//	- Terms & conditions
-//	- Privacy
-//	- Cookies
+// Shortcode Configuration
+// ==========================
+//	
+// - Terms & conditions
+// - Privacy
+// - Cookies
 //----------------------------------------------
 
 //----------------------------------------------
 // Plugins
+// ==========================
+//
+// Modify plugins functionality
+// 
 // - ACF
 //----------------------------------------------
 
@@ -426,7 +453,11 @@ if ( is_admin() ) {
 }
 
 //----------------------------------------------
-//	WooCommerce Configuration
+// WooCommerce Configuration
+// ==============================
+//
+// Modify WooCommerce core functionality
+//	
 //----------------------------------------------
 
 //add_filter( 'ipress_wc_header_cart_dropdown', '__return_true' );
@@ -495,6 +526,8 @@ if ( ipress_wc_active() ) {
 
 //----------------------------------------------
 // Google
+// ======================
+// 
 // - Analytics
 // - Adwords Tracking
 //----------------------------------------------
