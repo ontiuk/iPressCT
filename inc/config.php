@@ -401,9 +401,6 @@ add_filter( 'ipress_body_class', function( $classes ) {
 	return $classes;
 } );
 
-// Remove comment support from post-types, set true to activate, or remove
-add_filter( 'ipress_comments_clean',  '__return_true' );
-
 // Move jQuery and dependecies to footer for performance, front-end only
 add_action( 'wp_enqueue_scripts', function() {
 	if ( ! is_admin() ) { 
