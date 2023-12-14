@@ -15,7 +15,7 @@
 
 // Get default scroll data
 $ip_back_to_top_scroll = apply_filters( 'ipress_back_to_top_scroll', [ 'speed' => 400, 'start' => 300 ] );
-$ip_back_to_top_icon = apply_filters( 'ipress_back_to_top_icon', IPRESS_ASSETS_URL . '/images/icons/back-to-top.png' );
+$ip_back_to_top_icon = apply_filters( 'ipress_back_to_top_icon', IPRESS_CHILD_ASSETS_URL . '/images/icons/back-to-top.png' );
 
 echo apply_filters(
 	'ipress_back_to_top_html',
