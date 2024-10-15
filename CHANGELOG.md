@@ -73,3 +73,4 @@
 * (05 December 2023)	2.8.4	Some integrated functionality should be off by default and config controlled
 * (05 December 2023)	2.8.5	Default back-to-top functionality
 * (06 December 2023)	2.8.6	Tidy up classes methods & instantiation
+* (18 December 2023)	2.8.7	Minor updates & refactor config file
